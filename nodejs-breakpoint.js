@@ -14,28 +14,29 @@ console.log(title);
 
     // 4. Nodejs vs Browser: Both the browser and Node.js use JavaScript as their programming language. Building apps that run in the browser is entirely different than building a Node.js application. Even though it's always JavaScript, some key differences make the experience radically different.
 
-    // Differences between Node.js and the Browser:
-    // 1. Environment: Node.js is a server-side environment, while the browser is a client-side environment.
-    // 2. Global Object: In Node.js, the global object is called global, while in the browser, it is called window.
-    // 3. Modules: Node.js uses CommonJS modules, while the browser uses ES6 modules.
-    // 4. File System: Node.js has access to the file system, while the browser does not.
-    // 5. APIs: Node.js has access to a wide range of APIs, while the browser has a limited set of APIs.
-    // 6. Event Loop: Node.js has a single-threaded event loop, while the browser has a multi-threaded event loop.
-    // 7. Networking: Node.js has built-in support for networking, while the browser does not.
-    // 8. Performance: Node.js is generally faster than the browser because it is optimized for server-side applications.
-    // 9. Security: Node.js is less secure than the browser because it has access to the file system and other system resources.
-    // 10. Debugging: Node.js has built-in debugging tools, while the browser has limited debugging tools.
-    // 11. Package Management: Node.js has a built-in package manager (npm), while the browser does not have a built-in package manager.
-    // 12. Asynchronous Programming: Node.js uses asynchronous programming, while the browser uses synchronous programming.
-    // 13. Event Handling: Node.js uses event-driven programming, while the browser uses event-based programming.
-    // 14. Error Handling: Node.js uses try-catch for error handling, while the browser uses window.onerror.
-    // 15. Debugging: Node.js has built-in debugging tools, while the browser has limited debugging tools.
-    // 16. Testing: Node.js has built-in testing tools, while the browser has limited testing tools.
-    // 17. Deployment: Node.js applications are deployed on servers, while browser applications are deployed on client machines.
-    // 18. Scalability: Node.js applications are more scalable than browser applications because they can handle a large number of concurrent connections.
-    // 19. Community: Node.js has a large and active community, while the browser has a smaller community.
-    // 20. Learning Curve: Node.js has a steeper learning curve than the browser because it requires knowledge of server-side programming concepts.
+    // 5. Differences between Node.js and the Browser:
+    // 5.1. Environment: Node.js is a server-side environment, while the browser is a client-side environment.
+    // 5.2. Global Object: In Node.js, the global object is called global, while in the browser, it is called window.
+    // 5.3. Modules: Node.js uses CommonJS modules, while the browser uses ES6 modules.
+    // 5.4. File System: Node.js has access to the file system, while the browser does not.
+    // 5.5. APIs: Node.js has access to a wide range of APIs, while the browser has a limited set of APIs.
+    // 5.6. Event Loop: Node.js has a single-threaded event loop, while the browser has a multi-threaded event loop.
+    // 5.7. Networking: Node.js has built-in support for networking, while the browser does not.
+    // 5.8. Performance: Node.js is generally faster than the browser because it is optimized for server-side applications.
+    // 5.9. Security: Node.js is less secure than the browser because it has access to the file system and other system resources.
+    // 5.10. Debugging: Node.js has built-in debugging tools, while the browser has limited debugging tools.
+    // 5.11. Package Management: Node.js has a built-in package manager (npm), while the browser does not have a built-in package manager.
+    // 5.12. Asynchronous Programming: Node.js uses asynchronous programming, while the browser uses synchronous programming.
+    // 5.13. Event Handling: Node.js uses event-driven programming, while the browser uses event-based programming.
+    // 5.14. Error Handling: Node.js uses try-catch for error handling, while the browser uses window.onerror.
+    // 5.15. Debugging: Node.js has built-in debugging tools, while the browser has limited debugging tools.
+    // 5.16. Testing: Node.js has built-in testing tools, while the browser has limited testing tools.
+    // 5.17. Deployment: Node.js applications are deployed on servers, while browser applications are deployed on client machines.
+    // 5.18. Scalability: Node.js applications are more scalable than browser applications because they can handle a large number of concurrent connections.
+    // 5.19. Community: Node.js has a large and active community, while the browser has a smaller community.
+    // 5.20. Learning Curve: Node.js has a steeper learning curve than the browser because it requires knowledge of server-side programming concepts.
 
+    // 6. Running Node.js Code: The usual way to run a Node.js program is to run the globally available node command (once you install Node.js) and pass the name of the file you want to execute.
 }
 
 /* 2. */
