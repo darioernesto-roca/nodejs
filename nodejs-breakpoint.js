@@ -32,8 +32,6 @@ console.log(title);
   // 5.19. Community: Node.js has a large and active community, while the browser has a smaller community.
   // 5.20. Learning Curve: Node.js has a steeper learning curve than the browser because it requires knowledge of server-side programming concepts.
 
-  // 6. Running Node.js Code: To run Node.js code, you need to have Node.js installed on your machine. You can download it from the official website. Once you have Node.js installed, you can run your code using the command line. Open your terminal and navigate to the directory where your JavaScript file is located. Then, run the following command:
-  // node yourfile.js
 }
 
 /* 2. */
