@@ -46,4 +46,21 @@ console.log(title);
     };
     module.exports = foo;
 
+    // In another file, we can import the foo module using the require() function:
+    // main.js
+    const foo = require("./foo.js");
+    foo(); // Output: Hello from foo!
+
+    // 2.3. ES6 Modules: ES6 (ECMAScript 2015) introduced a new module system that is now widely used in modern JavaScript development. It uses the import and export keywords to define modules. The ES6 module system is more flexible and powerful than the CommonJS module system. In Node.js, we can use ES6 modules by using the --experimental-modules flag or by using the .mjs file extension.
+    // For example, consider a file named foo.mjs:
+    // foo.mjs
+    // export const foo2 = () => {
+    //     console.log("Hello from foo!");
+    // };
+
+    // In another file, we can import the foo module using the import statement:
+    // main.mjs
+    // import { foo2 } from "./foo.mjs";
+    // foo2(); // Output: Hello from foo!
+
  }
