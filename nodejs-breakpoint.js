@@ -63,4 +63,35 @@ console.log(title);
     // import { foo2 } from "./foo.mjs";
     // foo2(); // Output: Hello from foo!
 
+    // 2.4. Node.js Built-in Modules: Node.js comes with a set of built-in modules that provide various functionalities. Some of the most commonly used built-in modules are:
+
+    // 2.4.1. fs: The fs module provides an API for interacting with the file system. It allows us to read and write files, create directories, and perform other file system operations.
+    const fs = require("fs");
+    const filePath = "./example.txt";
+    fs.writeFileSync(filePath, "Hello, World!"); // Create a file and write to it
+
+    // 2.4.2. http: The http module provides an API for creating HTTP servers and clients. It allows us to create web servers and make HTTP requests.
+    const http = require("http");
+    const server = http.createServer((req, res) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/plain");
+        res.end("Hello, World!\n");
+    });
+    server.listen(3000, () => {
+        console.log("Server running at http://localhost:3000/");
+    });
+
+    // 2.4.3. path: The path module provides utilities for working with file and directory paths. It allows us to manipulate file paths and resolve relative paths.
+    const path = require("path");
+    const filePath2 = path.join(__dirname, "example.txt");
+    console.log("File path:", filePath2); // Output: File path: /path/to/example.txt
+
+    // 2.4.4. os: The os module provides information about the operating system. It allows us to get information about the system's CPU, memory, and network interfaces.
+    const os = require("os");
+    console.log("OS type:", os.type()); // Output: OS type: Linux
+    console.log("OS platform:", os.platform()); // Output: OS platform: linux
+    console.log("OS architecture:", os.arch()); // Output: OS architecture: x64
+    console.log("Total memory:", os.totalmem()); // Output: Total memory: 16777216000
+    console.log("Free memory:", os.freemem()); // Output: Free memory: 1234567890
+    console.log("CPU info:", os.cpus()); // Output: CPU info: [ { model: 'Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz', speed: 1800, times: { user: 123456, nice: 0, sys: 123456, idle: 123456, irq: 123456 } }, ... ]
  }
