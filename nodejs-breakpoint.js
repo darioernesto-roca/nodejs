@@ -101,4 +101,29 @@ console.log(title);
  {
     // 3.1 What is npm: npm is the standard package manager for Node.js.
     // It is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. npm is the default package manager for the JavaScript runtime environment Node.js. It is written entirely in JavaScript and is itself a Node.js application. npm is included with Node.js by default, so you don't need to install it separately.
+
+    // 3.2 Installing packages with npm: To install a package, you can use the npm install command followed by the package name. For example, to install the express package, you can run the following command:
+    // npm install express
+    // This will install the express package and add it to your project's dependencies in the package.json file.
+    // You can also install a package globally by using the -g flag. For example, to install the nodemon package globally, you can run the following command:
+    // npm install -g nodemon
+    // This will install the nodemon package globally, allowing you to use it from anywhere on your system.
+    // You can also install a specific version of a package by specifying the version number. For example, to install version 4.17.1 of the express package, you can run the following command:
+    // npm install express@4.17.1
+    // This will install version 4.17.1 of the express package and add it to your project's dependencies in the package.json file.
+    // You can also install multiple packages at once by separating the package names with a space. For example, to install the express and mongoose packages, you can run the following command:
+    // npm install express mongoose
+    // This will install both the express and mongoose packages and add them to your project's dependencies in the package.json file.
+    // You can also install packages from a Git repository by specifying the repository URL. For example, to install the express package from a Git repository, you can run the following command:
+    // npm install git+
+    //github.com:expressjs/express.git
+    // This will install the express package from the specified Git repository and add it to your project's dependencies in the package.json file.
+    // You can also install packages from a tarball by specifying the tarball URL. For example, to install the express package from a tarball, you can run the following command:
+    // npm install https://registry.npmjs.org/express/-/express-4.17.1.tgz
+    // This will install the express package from the specified tarball and add it to your project's dependencies in the package.json file.
+
+    // 3.3 Uninstalling packages with npm: To uninstall a package, you can use the npm uninstall command followed by the package name. For example, to uninstall the express package, you can run the following command:
+    // npm uninstall express
+    // This will uninstall the express package and remove it from your project's dependencies in the package.json file.
+    // You can also uninstall multiple packages at once by separating the package names with a space. For example, to uninstall the express
  }
