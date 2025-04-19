@@ -126,4 +126,6 @@ console.log(title);
     // npm uninstall express
     // This will uninstall the express package and remove it from your project's dependencies in the package.json file.
     // You can also uninstall multiple packages at once by separating the package names with a space. For example, to uninstall the express
+
+    // npx: npx is a very powerful command that's been available in npm starting version 5.2, released in July 2017. If you don't want to install npm, you can install npx as a standalone package. npx lets you run code built with Node.js and published through the npm registry, without needing to install the package itself. This is particularly useful for trying out new tools, running one-time commands, or using packages in shared environments where global installations are undesirable. npx takes care of downloading the package on-the-fly, running the desired command, and then cleaning up the temporary installation. This keeps your project's dependencies lean and avoids version conflicts. 
  }
