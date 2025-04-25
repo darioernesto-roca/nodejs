@@ -127,5 +127,16 @@ console.log(title);
     // This will uninstall the express package and remove it from your project's dependencies in the package.json file.
     // You can also uninstall multiple packages at once by separating the package names with a space. For example, to uninstall the express
 
-    // npx: npx is a very powerful command that's been available in npm starting version 5.2, released in July 2017. If you don't want to install npm, you can install npx as a standalone package. npx lets you run code built with Node.js and published through the npm registry, without needing to install the package itself. This is particularly useful for trying out new tools, running one-time commands, or using packages in shared environments where global installations are undesirable. npx takes care of downloading the package on-the-fly, running the desired command, and then cleaning up the temporary installation. This keeps your project's dependencies lean and avoids version conflicts. 
+    // npx: npx is a very powerful command that's been available in npm starting version 5.2, released in July 2017. If you don't want to install npm, you can install npx as a standalone package. npx lets you run code built with Node.js and published through the npm registry, without needing to install the package itself. This is particularly useful for trying out new tools, running one-time commands, or using packages in shared environments where global installations are undesirable. npx takes care of downloading the package on-the-fly, running the desired command, and then cleaning up the temporary installation. This keeps your project's dependencies lean and avoids version conflicts.
+
+    // Semantic versioning: Semantic versioning (semver) is a versioning scheme for software that uses a three-part version number: MAJOR.MINOR.PATCH. The MAJOR version is incremented when there are incompatible changes, the MINOR version is incremented when new features are added in a backwards-compatible manner, and the PATCH version is incremented when backwards-compatible bug fixes are introduced. For example, if a package has a version number of 1.2.3, it means that it has had 1 major release, 2 minor releases, and 3 patch releases.
+    // The version number is usually specified in the package.json file, which is a JSON file that contains metadata about the package, including its name, version, description, and dependencies. The version number is specified in the "version" field of the package.json file. For example:
+    // {
+    //     "name": "my-package",
+    //     "version": "1.2.3",
+    //     "description": "My package description",
+    //     "dependencies": {
+    //         "express": "^4.17.1"
+    //     }
+    // }
  }
