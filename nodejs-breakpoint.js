@@ -140,3 +140,29 @@ console.log(title);
     //     }
     // }
  }
+
+ /* 4. Error Handling */
+{
+    // 4.1. Error handling is an important aspect of programming that allows developers to handle unexpected situations and prevent crashes in their applications. In Node.js, there are several ways to handle errors, including using try-catch blocks, error events, and error handling middleware.
+
+    // 4.2. Try-Catch Blocks: The try-catch statement is used to handle exceptions in JavaScript. It allows you to catch errors that occur in a block of code and handle them gracefully. For example:
+    try {
+        const result = riskyFunction(); // This function may throw an error
+        console.log("Result:", result);
+    } catch (error) {
+        console.error("Error:", error.message); // Handle the error
+    }
+
+    // 4.3. Error Events: Node.js provides an event-driven architecture, and many built-in modules emit error events when an error occurs. You can listen for these events and handle them accordingly. For example:
+    const fs = require("fs");
+    fs.readFile("nonexistent-file.txt", (error, data) => {
+        if (error) {
+            console.error("Error reading file:", error.message); // Handle the error
+            return;
+        }
+        console.log("File data:", data.toString());
+    });
+
+    // 4.4. Error Handling Middleware: In Express.js, you can create custom error handling middleware to handle errors that occur in your application. This middleware can be used to log errors, send error responses, or perform any other necessary actions when an error occurs.
+
+}
