@@ -165,4 +165,21 @@ console.log(title);
 
     // 4.4. Error Handling Middleware: In Express.js, you can create custom error handling middleware to handle errors that occur in your application. This middleware can be used to log errors, send error responses, or perform any other necessary actions when an error occurs.
 
+    // 4.5 System errors: Node.js provides a set of built-in error classes that represent different types of errors. These include:
+    // Error: The base error class.
+    // TypeError: Represents a type-related error.
+    // ReferenceError: Represents a reference-related error.
+    // SyntaxError: Represents a syntax-related error.
+    // RangeError: Represents a range-related error.
+    // You can create custom error classes by extending the built-in Error class.
+
+    // 4.6 User Specified Errors: You can create custom error classes to represent specific errors in your application. This allows you to provide more meaningful error messages and handle errors in a more structured way. For example:
+
+    class CustomError extends Error {
+        constructor(message) {
+            super(message);
+            this.name = "CustomError";
+        }
+    }
+
 }
