@@ -182,4 +182,10 @@ console.log(title);
         }
     }
 
+    // 4.7 Assertion Errors: Assertion errors are used to indicate that an assertion has failed. In Node.js, you can use the assert module to perform assertions and throw assertion errors when the assertions fail. For example:
+    const assert = require("assert");
+    const value = 5;
+    assert.strictEqual(value, 10, "Value should be 10"); // This will throw an assertion error
+
+
 }
