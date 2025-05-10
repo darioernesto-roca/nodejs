@@ -165,7 +165,7 @@ console.log(title);
 
     // 4.4. Error Handling Middleware: In Express.js, you can create custom error handling middleware to handle errors that occur in your application. This middleware can be used to log errors, send error responses, or perform any other necessary actions when an error occurs.
 
-    // 4.5 System errors: Node.js provides a set of built-in error classes that represent different types of errors. These include:
+    // 4.5. System errors: Node.js provides a set of built-in error classes that represent different types of errors. These include:
     // Error: The base error class.
     // TypeError: Represents a type-related error.
     // ReferenceError: Represents a reference-related error.
@@ -173,7 +173,7 @@ console.log(title);
     // RangeError: Represents a range-related error.
     // You can create custom error classes by extending the built-in Error class.
 
-    // 4.6 User Specified Errors: You can create custom error classes to represent specific errors in your application. This allows you to provide more meaningful error messages and handle errors in a more structured way. For example:
+    // 4.6. User Specified Errors: You can create custom error classes to represent specific errors in your application. This allows you to provide more meaningful error messages and handle errors in a more structured way. For example:
 
     class CustomError extends Error {
         constructor(message) {
@@ -182,10 +182,23 @@ console.log(title);
         }
     }
 
-    // 4.7 Assertion Errors: Assertion errors are used to indicate that an assertion has failed. In Node.js, you can use the assert module to perform assertions and throw assertion errors when the assertions fail. For example:
+    // 4.7. Assertion Errors: Assertion errors are used to indicate that an assertion has failed. In Node.js, you can use the assert module to perform assertions and throw assertion errors when the assertions fail. For example:
     const assert = require("assert");
     const value = 5;
     assert.strictEqual(value, 10, "Value should be 10"); // This will throw an assertion error
+
+    // 4.8. JavaScript Errores: JavaScript Errors are used by JavaScript to inform developers about various issue in the script being executed. These issues can be syntax error where the developer/programmer has used the wrong syntax, it can be due to some wrong user input or some other problem. JavaScript has six types of errors that may occur during the execution of the script:
+    // EvalError: Represents an error in the eval() function.
+    // RangeError: Represents a number that is outside the allowable range.
+    // ReferenceError: Represents a reference to a variable that is not defined.
+    // SyntaxError: Represents a syntax error in the code.
+    // TypeError: Represents a type-related error.
+    // URIError: Represents an error in the encodeURI() or decodeURI() functions.
+
+    // 4.9. Uncaught Exceptions: Uncaught exceptions are errors that occur during the execution of a program and are not caught by any error handling mechanism. In Node.js, uncaught exceptions can be handled using the process object. You can listen for the "uncaughtException" event and handle the error accordingly. For example:
+    process.on("uncaughtException", (error) => {
+        console.error("Uncaught exception:", error.message); // Handle the uncaught exception
+    });
 
 
 }
