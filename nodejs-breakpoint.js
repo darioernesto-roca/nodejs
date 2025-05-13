@@ -124,6 +124,13 @@ console.log(title);
     // npm install https://registry.npmjs.org/express/-/express-4.17.1.tgz
     // This will install the express package from the specified tarball and add it to your project's dependencies in the package.json file.
 
+    // 3.3.1 Updating packages with npm: To update a package, you can use the npm update command followed by the package name. For example, to update the express package, you can run the following command:
+    // npm update express
+    // This will update the express package to the latest version and update the version number in your project's dependencies in the package.json file.
+    // You can also update all packages in your project by running the following command:
+    // npm update
+    // This will update all packages in your project to their latest versions and update the version numbers in your project's dependencies in the package.json file.
+
     // 3.4 Uninstalling packages with npm: To uninstall a package, you can use the npm uninstall command followed by the package name. For example, to uninstall the express package, you can run the following command:
     // npm uninstall express
     // This will uninstall the express package and remove it from your project's dependencies in the package.json file.
