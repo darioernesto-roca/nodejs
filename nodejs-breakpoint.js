@@ -131,6 +131,32 @@ console.log(title);
     // npm update
     // This will update all packages in your project to their latest versions and update the version numbers in your project's dependencies in the package.json file.
 
+    // 3.3.2 Running scripts with npm: npm allows you to define scripts in your package.json file that can be run using the npm run command. For example, you can define a script to start your application in the package.json file like this:
+    // {
+    //   "scripts": {
+    //     "start": "node app.js"
+    //   }
+    // }
+    // You can then run the script using the following command:
+    // npm run start
+    // This will run the app.js file using Node.js. You can also define other scripts, such as test scripts, build scripts, and more. For example, you can define a test script like this:
+    // {
+    //   "scripts": {
+    //     "test": "mocha test.js"
+    //   }
+    // }
+    // You can then run the test script using the following command:
+    // npm run test
+    // This will run the test.js file using the mocha testing framework. You can also pass arguments to your scripts by using the -- flag. For example, you can pass an argument to the start script like this:
+    // npm run start -- --port=3000
+    // This will run the app.js file with the --port=3000 argument. You can also define pre and post scripts that run before or after a script. For example, you can define a prestart script like this:
+    // {
+    //   "scripts": {
+    //     "prestart": "npm install",
+    //     "start": "node app.js"
+    //   }
+    // }
+
     // 3.4 Uninstalling packages with npm: To uninstall a package, you can use the npm uninstall command followed by the package name. For example, to uninstall the express package, you can run the following command:
     // npm uninstall express
     // This will uninstall the express package and remove it from your project's dependencies in the package.json file.
