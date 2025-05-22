@@ -235,5 +235,8 @@ console.log(title);
         console.error("Uncaught exception:", error.message); // Handle the uncaught exception
     });
 
-
+    // 4.10. Callstacks / Stacktraces: A call stack is a data structure that keeps track of function calls in a program. When a function is called, it is added to the top of the call stack. When the function returns, it is removed from the call stack. If an error occurs in a function, the call stack can be used to trace back to the point where the error occurred. In Node.js, you can use the Error.captureStackTrace() method to capture the call stack at a specific point in your code. For example:
+    function foo() {
+        throw new Error("An error occurred");
+    }
 }
