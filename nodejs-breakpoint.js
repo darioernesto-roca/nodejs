@@ -174,7 +174,23 @@ console.log(title);
     //         "express": "^4.17.1"
     //     }
     // }
- }
+
+    // 3.7 npm workspaces: npm workspaces is a feature that allows you to manage multiple packages within a single repository. It allows you to create a monorepo, which is a single repository that contains multiple packages. This is useful for managing large projects that consist of multiple packages or modules. Workspaces allow you to share dependencies between packages, run scripts across multiple packages, and manage package versions more easily. To create a workspace, you can add a "workspaces" field to your package.json file. For example:
+    // {
+    //     "name": "my-monorepo",
+    //     "version": "1.0.0",
+    //     "workspaces": [
+    //         "packages/*"
+    //     ],
+    //     "scripts": {
+    //         "start": "npm run start --workspace=packages/package1"
+    //     }
+    // }
+    // This will create a workspace that includes all packages in the packages directory. You can then run scripts across all packages using the npm run command. For example, to run the start script in all packages, you can run the following command:
+    // npm run start --workspaces
+    // This will run the start script in all packages in the workspace. You can also run scripts in a specific package by using the --workspace flag. For example, to run the start script in the package1 package, you can run the following command:
+    // npm run start --workspace=packages/package1
+}
 
  /* 4. Error Handling */
 {
