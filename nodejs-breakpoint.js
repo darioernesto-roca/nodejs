@@ -291,3 +291,49 @@ console.log(title);
         throw new Error("An error occurred");
     }
 }
+
+/* 5. Asynchronous Programming */
+{
+    // 5.1. Asynchronous programming is a programming paradigm that allows you to write code that can run concurrently without blocking the main thread. In Node.js, asynchronous programming is achieved using callbacks, promises, and async/await.
+
+    // 5.2. Callbacks: A callback is a function that is passed as an argument to another function and is executed when the operation is complete. For example:
+    const fs = require("fs");
+    fs.readFile("example.txt", "utf8", (error, data) => {
+        if (error) {
+            console.error("Error reading file:", error.message);
+            return;
+        }
+        console.log("File data:", data);
+    });
+
+    // 5.3. Promises: A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises can be in one of three states: pending, fulfilled, or rejected. For example:
+    const readFilePromise = new Promise((resolve, reject) => {
+        fs.readFile("example.txt", "utf8", (error, data) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(data);
+            }
+        });
+    });
+
+    readFilePromise
+        .then((data) => {
+            console.log("File data:", data);
+        })
+        .catch((error) => {
+            console.error("Error reading file:", error.message);
+        });
+
+    // 5.4. Async/Await: Async/await is a syntax for working with promises that makes asynchronous code look more like synchronous code. It allows you to write asynchronous code in a more readable and maintainable way. For example:
+    async function readFileAsync() {
+        try {
+            const data = await readFilePromise;
+            console.log("File data:", data);
+        } catch (error) {
+            console.error("Error reading file:", error.message);
+        }
+    }
+
+    readFileAsync();
+}
