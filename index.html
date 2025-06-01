@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Cheat Sheet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #4CAF50;
+    }
+    pre {
+      background-color: #2d2d2d;
+      padding: 1em;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    code {
+      color: #dcdcdc;
+    }
+    section {
+      margin-bottom: 3em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Node.js Cheat Sheet</h1>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p><strong>What is Node.js?</strong> Node.js is a cross-platform, open-source runtime environment that executes JavaScript code outside a browser. It's event-driven and non-blocking, built on Chrome's V8 engine.</p>
+    <p><strong>Why use Node.js?</strong> It's fast, scalable, and ideal for real-time apps. It supports thousands of open-source packages via npm.</p>
+    <p><strong>Node.js vs Browser:</strong></p>
+    <ul>
+      <li>Node: server-side, global, CommonJS, has file system access</li>
+      <li>Browser: client-side, window, ES6 modules, no file system</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Modules</h2>
+    <pre><code class="language-js">// CommonJS example
+const foo = () => {
+  console.log("Hello from foo!");
+};
+module.exports = foo;
+
+const foo = require("./foo.js");
+foo();</code></pre>
+    <pre><code class="language-js">// ES Modules (in .mjs or with type: "module")
+export const foo = () => console.log("Hello from foo!");
+import { foo } from "./foo.mjs";
+foo();</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Built-in Modules</h2>
+    <pre><code class="language-js">const fs = require("fs");
+fs.writeFileSync("example.txt", "Hello, World!");
+
+const http = require("http");
+http.createServer((req, res) => {
+  res.end("Hello World");
+}).listen(3000);
+
+const path = require("path");
+console.log(path.join(__dirname, "file.txt"));
+
+const os = require("os");
+console.log(os.platform(), os.arch());</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Error Handling</h2>
+    <pre><code class="language-js">try {
+  const result = riskyFunction();
+} catch (err) {
+  console.error(err);
+}
+
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught exception:", err);
+});</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Async Programming</h2>
+    <pre><code class="language-js">// Callback
+fs.readFile("file.txt", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+// Promise
+const readPromise = new Promise((resolve, reject) => {
+  fs.readFile("file.txt", (err, data) => {
+    if (err) reject(err);
+    else resolve(data);
+  });
+});
+
+// Async/Await
+async function readFileAsync() {
+  try {
+    const data = await readPromise;
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>6. npm Essentials</h2>
+    <pre><code class="language-bash">npm init -y                  # Initialize project
+npm install express          # Install locally
+npm install -g nodemon       # Install globally
+npm uninstall express        # Uninstall package
+npm update                   # Update all
+npm run start                # Run start script
+npx create-react-app app     # Run temporary package</code></pre>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>
