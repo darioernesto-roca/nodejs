@@ -290,6 +290,14 @@ console.log(title);
     function foo() {
         throw new Error("An error occurred");
     }
+    
+    try {
+        foo();
+    } catch (error) {
+        Error.captureStackTrace(error, foo); // Capture the call stack
+        console.error("Error:", error.message);
+        console.error("Stack trace:", error.stack); // Print the stack trace
+    }
 }
 
 /* 5. Asynchronous Programming */
