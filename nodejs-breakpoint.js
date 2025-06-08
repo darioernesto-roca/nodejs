@@ -364,4 +364,24 @@ console.log(title);
     }
 
     readFileAsync();
+
+    // 5.5 Promises: Promises are a way to handle asynchronous operations in JavaScript. They represent a value that may not be available yet but will be resolved in the future. Promises can be in one of three states: pending, fulfilled, or rejected. You can create a promise using the Promise constructor and resolve or reject it based on the outcome of an asynchronous operation. For example:
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const success = true; // Simulate success or failure
+            if (success) {
+                resolve("Operation successful");
+            } else {
+                reject(new Error("Operation failed"));
+            }
+        }, 1000);
+    });
+
+    promise
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.error(error.message);
+        });
 }
