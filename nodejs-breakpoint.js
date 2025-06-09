@@ -384,4 +384,21 @@ console.log(title);
         .catch((error) => {
             console.error(error.message);
         });
+
+    // 5.6.SetTimeout: The setTimeout runs a function after the specified period expires. Times are declared in milliseconds.
+    setTimeout(() => {
+        console.log("This message is displayed after 2 seconds");
+    }, 2000);
+
+    // 5.7. SetInterval: The setInterval runs a function repeatedly at the specified interval. Times are declared in milliseconds.
+    const intervalId = setInterval(() => {
+        console.log("This message is displayed every 1 second");
+    }, 1000);
+
+    // To stop the interval after 5 seconds add a clearInterval function. This is a native JavaScript function that stops the interval from running.
+    // It takes the interval ID as an argument, which is returned by the setInterval function.
+    setTimeout(() => {
+        clearInterval(intervalId);
+        console.log("Interval cleared");
+    }, 5000);
 }
