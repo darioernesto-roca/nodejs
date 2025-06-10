@@ -429,4 +429,9 @@ console.log(title);
     // Immediate callback
     // Timeout callback
     // In this example, the "Start" and "End" messages are logged immediately, while the "Immediate callback" and "Timeout callback" messages are logged in the next iteration of the event loop. The order of execution is determined by the event loop phases.
+
+    // 5.12. Proccess.nextTick: The process.nextTick function allows you to schedule a callback to be executed in the next iteration of the event loop, before any I/O operations or timers. It is often used to ensure that a callback is executed immediately after the current operation completes. For example:
+    process.nextTick(() => {
+        console.log("This message is displayed in the next iteration of the event loop");
+    });
 }
