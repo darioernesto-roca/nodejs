@@ -401,4 +401,32 @@ console.log(title);
         clearInterval(intervalId);
         console.log("Interval cleared");
     }, 5000);
+
+    // 5.8 setInmmediate: The setImmediate function delays the execution of a function to be called after the current event loops finish all their execution. It's very similar to calling setTimeout with 0 ms delay.
+    setImmediate(() => {
+        console.log("This message is displayed after the current event loop");
+    });
+    // 5.9. Event Loop: The event loop is a mechanism that allows Node.js to handle asynchronous operations. It continuously checks for events and executes the corresponding callbacks when they are ready. The event loop is responsible for managing the execution of asynchronous code in Node.js.
+    // 5.10. Event Loop Phases: The event loop has several phases, each responsible for handling different types of events. The main phases are:
+    // - Timers: This phase executes callbacks scheduled by setTimeout and setInterval.
+    // - I/O Callbacks: This phase executes callbacks for I/O operations, such as reading files or making network requests.
+    // - Idle, Prepare: This phase is used for internal operations and is not typically used by developers.
+    // - Poll: This phase retrieves new I/O events and executes their callbacks.
+    // - Check: This phase executes callbacks scheduled by setImmediate.
+    // - Close Callbacks: This phase executes callbacks for closed resources, such as sockets or file descriptors.
+    // 5.11. Event Loop Example: Here's a simple example that demonstrates the event loop in action:
+    console.log("Start");
+    setTimeout(() => {
+        console.log("Timeout callback");
+    }, 0);
+    setImmediate(() => {
+        console.log("Immediate callback");
+    });
+    console.log("End");
+    // Output:
+    // Start
+    // End
+    // Immediate callback
+    // Timeout callback
+    // In this example, the "Start" and "End" messages are logged immediately, while the "Immediate callback" and "Timeout callback" messages are logged in the next iteration of the event loop. The order of execution is determined by the event loop phases.
 }
