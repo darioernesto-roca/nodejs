@@ -430,8 +430,18 @@ console.log(title);
     // Timeout callback
     // In this example, the "Start" and "End" messages are logged immediately, while the "Immediate callback" and "Timeout callback" messages are logged in the next iteration of the event loop. The order of execution is determined by the event loop phases.
 
-    // 5.12. Proccess.nextTick: The process.nextTick function allows you to schedule a callback to be executed in the next iteration of the event loop, before any I/O operations or timers. It is often used to ensure that a callback is executed immediately after the current operation completes. For example:
+    // 5.12. Process.nextTick: The process.nextTick function allows you to schedule a callback to be executed in the next iteration of the event loop, before any I/O operations or timers. It is often used to ensure that a callback is executed immediately after the current operation completes. For example:
     process.nextTick(() => {
         console.log("This message is displayed in the next iteration of the event loop");
     });
+
+    // 5.13. Event Emitter: The EventEmitter class is a built-in module in Node.js that allows you to create and manage custom events. It provides methods for emitting events, listening for events, and removing event listeners. You can create an instance of the EventEmitter class and use it to handle custom events in your application. For example:
+    const EventEmitter = require("events");
+    const myEmitter = new EventEmitter();
+
+    myEmitter.on("event", () => {
+        console.log("An event occurred!");
+    });
+
+    myEmitter.emit("event"); // Output: An event occurred!
 }
