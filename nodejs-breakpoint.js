@@ -444,4 +444,9 @@ console.log(title);
     });
 
     myEmitter.emit("event"); // Output: An event occurred!
+
+    // 5.14. Event loop: The event loop is a fundamental concept in Node.js that allows for non-blocking I/O operations. It enables the execution of asynchronous code by offloading operations to the system kernel whenever possible. This means that Node.js can handle many connections simultaneously without being blocked by slow operations. The event loop continuously checks for pending events and executes their callbacks, ensuring that the application remains responsive.
+    
+
+
 }
