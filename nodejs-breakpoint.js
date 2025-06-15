@@ -446,7 +446,14 @@ console.log(title);
     myEmitter.emit("event"); // Output: An event occurred!
 
     // 5.14. Event loop: The event loop is a fundamental concept in Node.js that allows for non-blocking I/O operations. It enables the execution of asynchronous code by offloading operations to the system kernel whenever possible. This means that Node.js can handle many connections simultaneously without being blocked by slow operations. The event loop continuously checks for pending events and executes their callbacks, ensuring that the application remains responsive.
-    
+ 
+}
 
+/* 6. Working with Files */
+/* You can programmatically manipulate files in Node.js with the built-in fs module. The name is short for “file system,” and the module contains all the functions you need to read, write, and delete files on the local machine. */
+
+{
+ // 6.1 File System Module: The fs module provides an API for interacting with the file system. It allows you to read and write files, create directories, and perform other file system operations. You can require the fs module in your Node.js application like this:
+ const fs = require("fs");
 
 }
