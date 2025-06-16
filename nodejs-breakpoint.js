@@ -453,7 +453,17 @@ console.log(title);
 /* You can programmatically manipulate files in Node.js with the built-in fs module. The name is short for “file system,” and the module contains all the functions you need to read, write, and delete files on the local machine. */
 
 {
- // 6.1 File System Module: The fs module provides an API for interacting with the file system. It allows you to read and write files, create directories, and perform other file system operations. You can require the fs module in your Node.js application like this:
- const fs = require("fs");
+    // 6.1 File System Module: The fs module provides an API for interacting with the file system. It allows you to read and write files, create directories, and perform other file system operations. You can require the fs module in your Node.js application like this:
+    const fs = require("fs");
 
+    // 6.2 __dirname: The __dirname variable is a global variable in Node.js that contains the absolute path to the directory that contains the currently executing script. It is useful for constructing file paths relative to the current script. For example:
+    const path = require("path");
+    const filePath = path.join(__dirname, "example.txt");
+    console.log("File path:", filePath); // Output: File path: /path/to/example.txt
+
+    // 6.3 __filename: The __filename variable is a global variable in Node.js that contains the absolute path to the currently executing script file. It is useful for constructing file paths relative to the current script file. For example:
+    const fileName = path.basename(__filename);
+    console.log("File name:", fileName); // Output: File name: nodejs-breakpoint.js
+
+    // The difference between __dirname and __filename is that __dirname gives you the directory path (that means the folder containing the script) of the current script, while __filename gives you the full path (that means the complete location including the file name) to the current script file.
 }
