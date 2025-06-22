@@ -466,4 +466,47 @@ console.log(title);
     console.log("File name:", fileName); // Output: File name: nodejs-breakpoint.js
 
     // The difference between __dirname and __filename is that __dirname gives you the directory path (that means the folder containing the script) of the current script, while __filename gives you the full path (that means the complete location including the file name) to the current script file.
+
+    // 6.4 glob: The glob pattern is most commonly used to specify filenames, called wildcard characters, and strings, called wildcard matching. The glob module is a third-party module that allows you to match files and directories using glob patterns. It is useful for finding files that match a specific pattern, such as all JavaScript files in a directory. You can install the glob module using npm:
+    // npm install glob
+    const glob = require("glob");
+    glob("*.js", (error, files) => {
+        if (error) {
+            console.error("Error matching files:", error.message);
+            return;
+        }
+        console.log("Matched files:", files); // Output: Matched files: [ 'nodejs-breakpoint.js', ... ]
+    }); 
+
+    //glob stands for "global" pattern matching. It allows you to search for files using wildcards, like:
+    //*.js → all JavaScript files in a folder
+    //**/*.json → all .json files in a directory and subdirectories
+    //src/**/test-*.js → all files starting with test- in any subfolder under src
+    //It mimics shell-style pattern matching (bash, zsh, etc.) but works inside your Node.js scripts.
+
+    // Here are real-world use cases where glob shines:
+
+    // 6.4.1. ✅ Dynamic File Importing
+    // Imagine a project where you have dozens of route files:
+    
+    // bash
+    // Copy
+    // Edit
+    // routes/
+    // ├── auth.js
+    // ├── users.js
+    // └── blog/
+    //     └── comments.js  
+    
+    // You can dynamically import all:
+    glob("routes/**/*.js", (err, files) => {
+        files.forEach(file => require(`./${file}`));
+    });
+
+    // 6.4.2. 🔄 Batch Processing Files
+    // Process all markdown files for a blog generator:
+    glob("content/**/*.md", (err, files) => {
+      files.forEach(file => convertMarkdownToHTML(file));
+    });
+
 }
