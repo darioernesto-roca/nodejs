@@ -532,4 +532,20 @@ console.log(title);
     .catch((error) => {
       console.error("Error removing directory:", error.message);
     });
+
+    // 6.6 Globby: The globby module is a third-party module that provides a more powerful and flexible way to match files and directories using glob patterns. It is built on top of the glob module and provides additional features, such as support for multiple patterns, negation patterns, and more. You can install the globby module using npm:
+  // npm install globby
+  const globby = require("globby");
+  // Example: Matching files using globby
+  (async () => { 
+    const files = await globby(["*.js", "!node_modules/**"]);
+    console.log("Matched files:", files); // Output: Matched files: [ 'nodejs-breakpoint.js', ... ]
+  })().catch((error) => {
+    console.error("Error matching files:", error.message);
+  }
+  );
+
+
+
+
 }
