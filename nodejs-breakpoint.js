@@ -533,19 +533,49 @@ console.log(title);
       console.error("Error removing directory:", error.message);
     });
 
-    // 6.6 Globby: The globby module is a third-party module that provides a more powerful and flexible way to match files and directories using glob patterns. It is built on top of the glob module and provides additional features, such as support for multiple patterns, negation patterns, and more. You can install the globby module using npm:
+  // 6.6 Globby: The globby module is a third-party module that provides a more powerful and flexible way to match files and directories using glob patterns. It is built on top of the glob module and provides additional features, such as support for multiple patterns, negation patterns, and more. You can install the globby module using npm:
   // npm install globby
   const globby = require("globby");
   // Example: Matching files using globby
-  (async () => { 
+  (async () => {
     const files = await globby(["*.js", "!node_modules/**"]);
     console.log("Matched files:", files); // Output: Matched files: [ 'nodejs-breakpoint.js', ... ]
   })().catch((error) => {
     console.error("Error matching files:", error.message);
-  }
-  );
+  });
 
+  // 6.7 Chokidar: The chokidar module is a third-party module that provides a simple and efficient way to watch for changes in files and directories. It is built on top of the fs module and provides additional features, such as support for recursive watching, filtering, and more. You can install the chokidar module using npm:
+  // npm install chokidar
+  const chokidar = require("chokidar");
+  // Example: Watching a directory for changes
+  const watcher = chokidar.watch("directory", {
+    persistent: true,
+    ignored: /node_modules/,
+  });
+  watcher
+    .on("add", (path) => {
+      console.log(`File added: ${path}`);
+    })
+    .on("change", (path) => {
+      console.log(`File changed: ${path}`);
+    })
+    .on("unlink", (path) => {
+      console.log(`File removed: ${path}`);
+    })
+    .on("error", (error) => {
+      console.error("Error watching directory:", error.message);
+    });
 
+  // Chokidar is a popular and robust Node.js library that provides a way to watch file system changes. Think of it as a super-powered fs.watch (Node.js's built-in file watching module). While fs.watch can be a bit unreliable and inconsistent across different operating systems, Chokidar aims to solve these problems by providing a more consistent, reliable, and feature-rich file watching experience.
 
+  // Why Use Chokidar?
 
+  // Cross-Platform Consistency: Chokidar normalizes file system events across different operating systems (macOS, Windows, Linux), so your code behaves the same way regardless of the platform it's running on.
+  // Handles Network Drives: It gracefully handles watching files on network drives, which can be problematic with fs.watch.
+  // Persistent Watching: Chokidar can continue watching files even if they are temporarily unavailable (e.g., due to network issues). It will automatically resume watching when the files become available again.
+  // Glob Support: You can use glob patterns to watch multiple files and directories with a single watcher.
+  // Ignored Paths: Easily exclude files and directories from being watched using ignore patterns.
+  // Ready Event: Chokidar emits a ready event when the initial scan of the file system is complete, ensuring that you don't process events before the watcher is fully initialized.
+  // Add/Unlink Events for Directories: Chokidar provides addDir and unlinkDir events, which are missing in the native fs.watch.
+  // Better Performance: In some cases, Chokidar can offer better performance than fs.watch, especially when watching large directories with many files.
 }
