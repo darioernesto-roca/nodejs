@@ -604,3 +604,22 @@ console.log(title);
   // Add/Unlink Events for Directories: Chokidar provides addDir and unlinkDir events, which are missing in the native fs.watch.
   // Better Performance: In some cases, Chokidar can offer better performance than fs.watch, especially when watching large directories with many files.
 }
+
+/* 7. Command Line Applications */
+// Command Line Applications (CLIs) are programs that run in a terminal or command prompt, allowing users to interact with the system through text-based commands. Node.js provides several modules and libraries to help you create powerful and user-friendly CLIs. Here are some key concepts and tools for building CLIs in Node.js:
+
+{
+  // 7.1. Process Object: The process object is a global object in Node.js that provides information about the current Node.js process. It allows you to access command-line arguments, environment variables, and other process-related information. For example:
+  console.log("Process ID:", process.pid); // Output: Process ID: 12345
+  console.log("Node.js Version:", process.version); // Output: Node.js Version: v14.17.0
+  console.log("Command-Line Arguments:", process.argv); // Output: Command-Line Arguments: [
+  // '/path/to/node', '/path/to/script.js', 'arg1', 'arg2' ]
+
+  // 7.2. Environment Variables: Environment variables are key-value pairs that can be used to configure the behavior of your application. You can access environment variables using the process.env object. For example:
+  console.log("Environment Variable PATH:", process.env.PATH); // Output: Environment Variable PATH: /usr/local/bin:/usr/bin:/bin 
+  console.log("Custom Environment Variable MY_VAR:", process.env.MY_VAR); // Output: Custom Environment Variable MY_VAR: value
+  // You can set environment variables before running your Node.js application, like this:
+  // MY_VAR=value node script.js
+  // You can also set environment variables in your code:
+  process.env.MY_VAR = "value";
+}
