@@ -609,6 +609,10 @@ console.log(title);
 // Command Line Applications (CLIs) are programs that run in a terminal or command prompt, allowing users to interact with the system through text-based commands. Node.js provides several modules and libraries to help you create powerful and user-friendly CLIs. Here are some key concepts and tools for building CLIs in Node.js:
 
 {
+  // 7.0. Exiting / Exit Codes: In Node.js, you can exit a process using the process.exit() method. You can also specify an exit code to indicate whether the process completed successfully or encountered an error.  The exit code can be either 0 or 1. 0 means end the process without any kind of failure and 1 means end the process with some failure. By convention, an exit code of 0 indicates success, while any non-zero exit code indicates an error. For example:
+  process.exit(0); // Exit with success
+  process.exit(1); // Exit with an error
+
   // 7.1. Process Object: The process object is a global object in Node.js that provides information about the current Node.js process. It allows you to access command-line arguments, environment variables, and other process-related information. For example:
   console.log("Process ID:", process.pid); // Output: Process ID: 12345
   console.log("Node.js Version:", process.version); // Output: Node.js Version: v14.17.0
