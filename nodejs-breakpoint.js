@@ -610,8 +610,8 @@ console.log(title);
 
 {
   // 7.0. Exiting / Exit Codes: In Node.js, you can exit a process using the process.exit() method. You can also specify an exit code to indicate whether the process completed successfully or encountered an error.  The exit code can be either 0 or 1. 0 means end the process without any kind of failure and 1 means end the process with some failure. By convention, an exit code of 0 indicates success, while any non-zero exit code indicates an error. For example:
-  process.exit(0); // Exit with success
-  process.exit(1); // Exit with an error
+  // process.exit(0); // Exit with success
+  // process.exit(1); // Exit with an error
 
   // 7.1. Process Object: The process object is a global object in Node.js that provides information about the current Node.js process. It allows you to access command-line arguments, environment variables, and other process-related information. For example:
   console.log("Process ID:", process.pid); // Output: Process ID: 12345
@@ -626,4 +626,20 @@ console.log(title);
   // MY_VAR=value node script.js
   // You can also set environment variables in your code:
   process.env.MY_VAR = "value";
+
+  // 7.3. dotenv package: The dotenv package is a popular library for loading environment variables from a .env file into the process.env object. This allows you to manage configuration settings in a separate file, making it easier to manage different environments (development, production, etc.). You can install the dotenv package using npm:
+  // npm install dotenv
+  const dotenv = require("dotenv");
+  dotenv.config(); // Load environment variables from .env file
+  console.log("Loaded Environment Variable MY_VAR:", process.env.MY_VAR); // Output: Loaded Environment Variable MY_VAR: value
+  // The dotenv package allows you to define environment variables in a .env file, which is a simple text file with key-value pairs. For example:
+  // MY_VAR=value
+  // ANOTHER_VAR=another_value
+  // You can then load these variables into your Node.js application using the dotenv.config() method
+  dotenv.config();
+  // console.log("MY_VAR:", process.env.MY_VAR); // Output: MY_VAR: value
+  // console.log("ANOTHER_VAR:", process.env.ANOTHER_VAR); // Output: ANOTHER_VAR: another_value
 }
+
+
+
