@@ -639,6 +639,16 @@ console.log(title);
   dotenv.config();
   // console.log("MY_VAR:", process.env.MY_VAR); // Output: MY_VAR: value
   // console.log("ANOTHER_VAR:", process.env.ANOTHER_VAR); // Output: ANOTHER_VAR: another_value
+
+  // 7.4 Takin Input - process.stdin: The process.stdin object is a readable stream that allows you to read input from the standard input (stdin) stream. You can use it to read user input from the command line. For example:
+  process.stdin.on("data", (data) => {
+    console.log("User Input:", data.toString().trim()); // Output: User Input: input from user
+  });
+
+  // You can use this key to take input from the terminal. Let's take an input from the terminal using stdin and then display it on the screen with stdout. For that, I am going to run the following code using node:
+  process.stdin.pipe(process.stdout);
+  // This will take input from the terminal and display it on the screen. You can type something in the terminal and press enter to see the output.
+  // For example, if you type "Hello, World!" and press enter, you will see "Hello, World!" printed on the screen.
 }
 
 
