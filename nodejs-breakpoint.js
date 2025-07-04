@@ -650,7 +650,7 @@ console.log(title);
   // This will take input from the terminal and display it on the screen. You can type something in the terminal and press enter to see the output.
   // For example, if you type "Hello, World!" and press enter, you will see "Hello, World!" printed on the screen.
 
-  // 7.5 Takin INput - Inquirer Package: The inquirer package is a popular library for creating interactive command-line interfaces. It allows you to prompt users for input, display menus, and handle user responses in a user-friendly way. You can install the inquirer package using npm:
+  // 7.5 Takin Input - Inquirer Package: The inquirer package is a popular library for creating interactive command-line interfaces. It allows you to prompt users for input, display menus, and handle user responses in a user-friendly way. You can install the inquirer package using npm:
   // npm install inquirer
   const inquirer = require("inquirer");
   // Example: Prompting the user for input
@@ -674,6 +674,19 @@ console.log(title);
     .catch((error) => {
       console.error("Error prompting user:", error.message);
     });
+
+    // 7.6 Takin Input - Prompts Package: The prompts package is another library for creating interactive command-line interfaces. It provides a simple and flexible way to prompt users for input, display menus, and handle user responses. You can install the prompts package using npm:
+  // npm install prompts
+  const prompts = require("prompts");
+  // Example: Prompting the user for input
+  (async () => {
+    const response = await prompts({
+      type: "text",
+      name: "username",
+      message: "Enter your username:",
+    });
+    console.log("User Input:", response.username); // Output: User Input: user
+  })();
 
 }
 
