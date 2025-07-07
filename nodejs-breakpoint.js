@@ -688,6 +688,11 @@ console.log(title);
     console.log("User Input:", response.username); // Output: User Input: user
   })();
 
+  // 7.7 Printing Output - process.stdout: The process.stdout object is a writable stream that allows you to write output to the standard output (stdout) stream. You can use it to print messages to the console. For example:
+  process.stdout.write("Hello, World!\n"); // Output: Hello, World!
+  // You can use this key to print output to the terminal. Let's print "Hello, World!" to the terminal using stdout. For that, I am going to run the following code using node.
+
+
 }
 
 
