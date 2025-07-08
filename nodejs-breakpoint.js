@@ -691,7 +691,19 @@ console.log(title);
   // 7.7 Printing Output - process.stdout: The process.stdout object is a writable stream that allows you to write output to the standard output (stdout) stream. You can use it to print messages to the console. For example:
   process.stdout.write("Hello, World!\n"); // Output: Hello, World!
   // You can use this key to print output to the terminal. Let's print "Hello, World!" to the terminal using stdout. For that, I am going to run the following code using node.
+  // stderr.write("Hello, World!\n");
+  // This will print "Hello, World!" to the terminal. You can also use console.log() to print output to the terminal, but using process.stdout.write() gives you more control over the output format and allows you to write directly to the standard output stream.
+  // For example, you can use process.stdout.write() to print output without a newline character
 
+  // 7.8 Printing Output - Chalk package: The chalk package is a popular library for styling terminal output. It allows you to add colors, styles, and formatting to your console messages, making them more visually appealing. You can install the chalk package using npm:
+  // npm install chalk
+  const chalk = require("chalk");
+  // Example: Styling console output
+  console.log(chalk.blue("This text is blue")); // Output: This text is blue
+  console.log(chalk.red("This text is red")); // Output: This text is red
+  console.log(chalk.green("This text is green")); // Output: This text is green
+  console.log(chalk.bold("This text is bold")); // Output: This text is bold
+  console.log(chalk.underline("This text is underlined")); // Output: This text is underlined
 
 }
 
