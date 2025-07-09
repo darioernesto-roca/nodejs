@@ -705,6 +705,19 @@ console.log(title);
   console.log(chalk.bold("This text is bold")); // Output: This text is bold
   console.log(chalk.underline("This text is underlined")); // Output: This text is underlined
 
+  // 7.9 Printing Output - Figlet package: The figlet package is a library for creating ASCII art text. It allows you to generate large, stylized text representations of strings, which can be used to create eye-catching headers or banners in your command-line applications. You can install the figlet package using npm:
+  // npm install figlet
+  const figlet = require("figlet");
+  // Example: Generating ASCII art text
+  figlet("Hello, World!", (error, result) => {
+    if (error) {
+      console.error("Error generating ASCII art:", error);
+      return;
+    }
+    console.log(result);
+  });
+
+
 }
 
 
