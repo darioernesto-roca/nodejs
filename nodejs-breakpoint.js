@@ -717,8 +717,23 @@ console.log(title);
     console.log(result);
   });
 
+  // 7.10 CLI Progress Bar - Progress Package: The progress package is a library for creating progress bars in command-line applications. It allows you to display the progress of long-running operations, such as file downloads or data processing, in a visually appealing way. You can install the progress package using npm:
+  // npm install progress
+  const ProgressBar = require("progress");
+  // Example: Creating a progress bar
+  const bar = new ProgressBar(":bar :percent", {
+    total: 100,
+    width: 20,
+    complete: "=",
+    incomplete: " ",
+  });
+  // Example: Updating the progress bar
+  const timer = setInterval(() => {
+    bar.tick();
+    if (bar.complete) {
+      clearInterval(timer);
+      console.log("Progress completed!");
+    }
+  }, 100);
 
 }
-
-
-
