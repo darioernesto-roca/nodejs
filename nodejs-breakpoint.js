@@ -603,6 +603,13 @@ console.log(title);
   // Ready Event: Chokidar emits a ready event when the initial scan of the file system is complete, ensuring that you don't process events before the watcher is fully initialized.
   // Add/Unlink Events for Directories: Chokidar provides addDir and unlinkDir events, which are missing in the native fs.watch.
   // Better Performance: In some cases, Chokidar can offer better performance than fs.watch, especially when watching large directories with many files.
+
+  // 6.8. process.cwd(): The process.cwd() method returns the current working directory of the Node.js process. It is useful for constructing file paths relative to the current working directory. For example:
+  const currentDir = process.cwd();
+  console.log("Current working directory:", currentDir); // Output: Current working directory: /path/to/current/dir
+  // You can use this method to get the current working directory of the Node.js process. This is useful when you want to construct file paths relative to the current working directory. For example:
+  const filePath2 = path.join(process.cwd(), "example.txt");
+  console.log("File path:", filePath2); // Output: File path: /path/to/current/dir/example.txt
 }
 
 /* 7. Command Line Applications */
