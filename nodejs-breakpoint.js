@@ -610,6 +610,44 @@ console.log(title);
   // You can use this method to get the current working directory of the Node.js process. This is useful when you want to construct file paths relative to the current working directory. For example:
   const filePath2 = path.join(process.cwd(), "example.txt");
   console.log("File path:", filePath2); // Output: File path: /path/to/current/dir/example.txt
+
+  // 6.9. Path Module: The path module provides utilities for working with file and directory paths. It allows you to manipulate paths in a platform-independent way, making it easier to work with file systems across different operating systems. You can require the path module in your Node.js application like this:
+  const path = require("path");
+  // Example: Joining paths
+  const joinedPath = path.join(__dirname, "subdir", "file.txt");
+  console.log("Joined path:", joinedPath); // Output: Joined path: /path/to/subdir/file.txt
+  // Example: Getting the file extension
+  const fileExtension = path.extname("example.txt");
+  console.log("File extension:", fileExtension); // Output: File extension: .txt
+  // Example: Getting the base name of a file
+  const baseName = path.basename("/path/to/file.txt");
+  console.log("Base name:", baseName); // Output: Base name: file.txt
+  // Example: Getting the directory name of a file
+  const dirName = path.dirname("/path/to/file.txt");
+  console.log("Directory name:", dirName); // Output: Directory name: /path/to
+  // Example: Normalizing a path
+  const normalizedPath = path.normalize("/path/to/../file.txt");
+  console.log("Normalized path:", normalizedPath); // Output: Normalized path: /path
+  // Example: Resolving a path
+  const resolvedPath = path.resolve("subdir", "file.txt");
+  console.log("Resolved path:", resolvedPath); // Output: Resolved path: /path/to/current/dir/subdir/file.txt
+  // Example: Getting the absolute path of a file
+  const absolutePath = path.resolve("file.txt");
+  console.log("Absolute path:", absolutePath); // Output: Absolute path: /path/to/current/dir/file.txt
+  // Example: Getting the relative path between two paths
+  const relativePath = path.relative("/path/to/current/dir", "/path/to/other/dir/file.txt");
+  console.log("Relative path:", relativePath); // Output: Relative path: ../other/dir/file.txt
+  // Example: Parsing a path
+  const parsedPath = path.parse("/path/to/file.txt");
+  console.log("Parsed path:", parsedPath);
+  // Output: Parsed path: {
+  // root: '/',
+  // dir: '/path/to',
+  // base: 'file.txt',
+  // ext: '.txt',
+  // name: 'file'
+  // };
+
 }
 
 /* 7. Command Line Applications */
