@@ -781,4 +781,9 @@ console.log(title);
     }
   }, 100);
 
+  // 7.11 Command Line Arguments - process.argv: The process.argv array contains the command-line arguments passed to the Node.js process. It allows you to access user input and configuration options provided when running your application. For example:
+  console.log("Command-Line Arguments:", process.argv); // Output: Command-Line Arguments: [<arguments>]
+
 }
+
+/* 8. Building & Consuming APIs */
