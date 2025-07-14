@@ -784,6 +784,18 @@ console.log(title);
   // 7.11 Command Line Arguments - process.argv: The process.argv array contains the command-line arguments passed to the Node.js process. It allows you to access user input and configuration options provided when running your application. For example:
   console.log("Command-Line Arguments:", process.argv); // Output: Command-Line Arguments: [<arguments>]
 
+  // 7.12 Command Line Arguments - Commander: The commander package is a popular library for building command-line interfaces in Node.js. It provides a simple and intuitive way to define commands, options, and arguments for your CLI applications. You can install the commander package using npm:
+  // npm install commander
+  const { Command } = require("commander");
+  const program = new Command();
+  // Example: Defining a command with options and arguments
+  program
+    .command("greet <name>")
+    .option("-g, --greeting <greeting>", "Custom greeting message", "Hello")
+    .action((name, options) => {
+      console.log(`${options.greeting}, ${name}!`); // Output: Custom greeting message, name!
+    });
+
 }
 
 /* 8. Building & Consuming APIs */
