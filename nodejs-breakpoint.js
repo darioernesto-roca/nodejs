@@ -799,3 +799,27 @@ console.log(title);
 }
 
 /* 8. Building & Consuming APIs */
+
+{
+  // 8.1. APIs (Application Programming Interfaces) are a set of rules and protocols that allow different software applications to communicate with each other. In Node.js, you can build and consume APIs using various modules and libraries.
+
+  // 8.2. Express.js: Express.js is a popular web framework for Node.js that simplifies the process of building APIs. It provides a set of features and middleware for handling HTTP requests, routing, and serving static files. You can install Express.js using npm:
+
+  // npm install express
+  const express = require("express");
+  const app = express();
+  // Example: Creating a simple API endpoint
+  app.get("/api/hello", (req, res) => {
+    res.json({ message: "Hello, World!" });
+  });
+  // Example: Starting the server
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+  // 8.3. Middleware: Middleware functions are functions that have access to the request and response objects in an Express.js application. They can modify the request or response, end the request-response cycle, or call the next middleware function in the stack. Middleware is often used for tasks such as logging, authentication, and error handling. For example:
+  app.use((req, res, next) => {
+    console.log(`Request received: ${req.method} ${req.url}`);
+    next();
+  });
+}
