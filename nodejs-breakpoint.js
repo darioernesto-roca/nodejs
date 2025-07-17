@@ -798,7 +798,7 @@ console.log(title);
 
 }
 
-/* 8. Building & Consuming APIs */
+/* 8. Building & Consuming APIs - Express*/
 
 {
   // 8.1. APIs (Application Programming Interfaces) are a set of rules and protocols that allow different software applications to communicate with each other. In Node.js, you can build and consume APIs using various modules and libraries.
@@ -822,4 +822,20 @@ console.log(title);
     console.log(`Request received: ${req.method} ${req.url}`);
     next();
   });
+
+  // 8.4. Routing: Routing is the process of defining how an application responds to client requests for specific endpoints. In Express.js, you can define routes using the app.get(), app.post(), app.put(), and app.delete() methods. Each method corresponds to a specific HTTP verb. For example:
+  app.post("/api/users", (req, res) => {
+    const user = req.body; // Assuming body-parser middleware is used
+    console.log("User created:", user);
+    res.status(201).json({ message: "User created successfully", user });
+  });
+
+  app.get("/api/404", (req, res) => {
+    res.status(404).json({ error: "Not Found" });
+  });
+
+  app.get("/api/users", (req, res) => {
+    res.status(200).json({ message: "List of users" });
+  });
+
 }
