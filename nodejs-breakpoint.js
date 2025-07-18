@@ -838,4 +838,6 @@ console.log(title);
     res.status(200).json({ message: "List of users" });
   });
 
+  // 8.5. Serving static files: Express.js can serve static files, such as HTML, CSS, and JavaScript files, using the express.static middleware. This is useful for serving front-end assets in a web application. For example:
+  app.use(express.static("public")); // Serve static files from the "public" directory
 }
