@@ -840,4 +840,17 @@ console.log(title);
 
   // 8.5. Serving static files: Express.js can serve static files, such as HTML, CSS, and JavaScript files, using the express.static middleware. This is useful for serving front-end assets in a web application. For example:
   app.use(express.static("public")); // Serve static files from the "public" directory
+
+  // 8.6. Template engines: Express.js supports various template engines, such as EJS, Pug, and Handlebars, for rendering dynamic HTML pages. You can set the view engine using the app.set() method. For example:
+  app.set("view engine", "ejs");
+  app.get("/api/template", (req, res) => {
+    res.render("template", { title: "Hello, World!" }); // Render the "template.ejs" file
+  });
+
+  // 8.7. Error handling: Express.js provides a built-in error handling mechanism that allows you to catch and handle errors in your application. You can define error-handling middleware using the app.use() method with four parameters (err, req, res, next). For example:
+  app.use((err, req, res, next) => {
+    console.error("Error occurred:", err.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  });
+  
 }
