@@ -852,5 +852,10 @@ console.log(title);
     console.error("Error occurred:", err.message);
     res.status(500).json({ error: "Internal Server Error" });
   });
+
+  // 8.8. CORS (Cross-Origin Resource Sharing): CORS is a security feature that restricts web pages from making requests to a different domain than the one that served the web page. In Express.js, you can enable CORS using the cors middleware. You can install the cors package using npm:
+  // npm install cors
+  const cors = require("cors");
+  app.use(cors()); // Enable CORS for all routes
   
 }
