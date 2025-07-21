@@ -857,5 +857,8 @@ console.log(title);
   // npm install cors
   const cors = require("cors");
   app.use(cors()); // Enable CORS for all routes
+
+  // 8.9. Body parsing: Express.js provides built-in middleware for parsing request bodies, such as express.json() for JSON data and express.urlencoded() for URL-encoded data. This allows you to easily access the request body in your route handlers. For example:
+  app.use(express.json()); // Parse JSON request bodies
   
 }
