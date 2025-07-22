@@ -860,5 +860,19 @@ console.log(title);
 
   // 8.9. Body parsing: Express.js provides built-in middleware for parsing request bodies, such as express.json() for JSON data and express.urlencoded() for URL-encoded data. This allows you to easily access the request body in your route handlers. For example:
   app.use(express.json()); // Parse JSON request bodies
+
+  // 8.10. Query parameters: Query parameters are key-value pairs appended to the URL after a question mark (?). In Express.js, you can access query parameters using the req.query object. For example:
+  app.get("/api/search", (req, res) => {
+    const query = req.query.q; // Access the "q" query parameter
+    console.log("Search query:", query);
+    res.json({ message: `Search results for "${query}"` });
+  });
+
+  // 8.11. URL parameters: URL parameters are dynamic segments in the URL that can be used to capture values from the request URL. In Express.js, you can define URL parameters using the colon (:) syntax in the route path. You can access URL parameters using the req.params object. For example:
+  app.get("/api/users/:id", (req, res) => {
+    const userId = req.params.id; // Access the "id" URL parameter
+    console.log("User ID:", userId);
+    res.json({ message: `User details for ID ${userId}` });
+  });
   
 }
