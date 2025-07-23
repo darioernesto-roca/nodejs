@@ -874,5 +874,17 @@ console.log(title);
     console.log("User ID:", userId);
     res.json({ message: `User details for ID ${userId}` });
   });
-  
+
+}
+
+/* 9. Building & Consuming APIs - Fastify */
+
+{
+  // 9.1. Fastify: Fastify is a high-performance web framework for Node.js that is designed to be fast and efficient. It provides a simple and intuitive API for building APIs and web applications. You can install Fastify using npm:
+  // npm install fastify
+  const fastify = require("fastify")();
+  // Example: Creating a simple API endpoint
+  fastify.get("/api/hello", (request, reply) => {
+    reply.send({ message: "Hello, World!" });
+  });
 }
