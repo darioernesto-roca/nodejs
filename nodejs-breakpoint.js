@@ -887,4 +887,12 @@ console.log(title);
   fastify.get("/api/hello", (request, reply) => {
     reply.send({ message: "Hello, World!" });
   });
+
+  // 9.2. Fastify Plugins: Fastify has a powerful plugin system that allows you to encapsulate functionality and reuse it across your application. You can create a plugin by defining a function that takes the Fastify instance as an argument. For example:
+  fastify.register((instance, options, done) => {
+    instance.get("/api/plugin", (request, reply) => {
+      reply.send({ message: "Hello from the plugin!" });
+    });
+    done();
+  });
 }
