@@ -895,4 +895,10 @@ console.log(title);
     });
     done();
   });
+
+  // 9.3. Fastify Middleware: Fastify supports middleware functions that can be used to modify the request or response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware is often used for tasks such as logging, authentication, and error handling. For example:
+  fastify.addHook("onRequest", (request, reply, done) => {
+    console.log(`Request received: ${request.method} ${request.url}`);
+    done();
+  });
 }
