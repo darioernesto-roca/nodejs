@@ -901,4 +901,10 @@ console.log(title);
     console.log(`Request received: ${request.method} ${request.url}`);
     done();
   });
+
+  // 9.4. Fastify Error Handling: Fastify provides a built-in error handling mechanism that allows you to handle errors in a centralized manner. You can define an error handler using the setErrorHandler method. For example:
+  fastify.setErrorHandler((error, request, reply) => {
+    console.error("Error occurred:", error.message);
+    reply.status(500).send({ error: "Internal Server Error" });
+  });
 }
