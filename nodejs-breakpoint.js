@@ -907,4 +907,11 @@ console.log(title);
     console.error("Error occurred:", error.message);
     reply.status(500).send({ error: "Internal Server Error" });
   });
+
+  // 9.5. Fastify CORS: Fastify has built-in support for CORS (Cross-Origin Resource Sharing) through the fastify-cors plugin. You can enable CORS for your Fastify application by registering the plugin. You can install the fastify-cors plugin using npm:
+  // npm install fastify-cors
+  const fastifyCors = require("fastify-cors");
+  fastify.register(fastifyCors, {
+    origin: "*", // Allow all origins
+  });
 }
