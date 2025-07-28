@@ -914,4 +914,11 @@ console.log(title);
   fastify.register(fastifyCors, {
     origin: "*", // Allow all origins
   });
+
+  // 9.6. Fastify Body Parsing: Fastify provides built-in support for parsing request bodies, such as JSON and URL-encoded data. You can enable body parsing by registering the fastify-formbody and fastify-json-body-parser plugins. You can install these plugins using npm:
+  // npm install fastify-formbody fastify-json-body-parser
+  const fastifyFormbody = require("fastify-formbody");
+  const fastifyJsonBodyParser = require("fastify-json-body-parser");
+  fastify.register(fastifyFormbody); // Parse URL-encoded request bodies
+  fastify.register(fastifyJsonBodyParser); // Parse JSON request bodies
 }
