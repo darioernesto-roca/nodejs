@@ -921,4 +921,18 @@ console.log(title);
   const fastifyJsonBodyParser = require("fastify-json-body-parser");
   fastify.register(fastifyFormbody); // Parse URL-encoded request bodies
   fastify.register(fastifyJsonBodyParser); // Parse JSON request bodies
+
+  // 9.7. Fastify Query Parameters: Fastify allows you to access query parameters using the request.query object. Query parameters are key-value pairs appended to the URL after a question mark (?). For example:
+  fastify.get("/api/search", (request, reply) => {
+    const query = request.query.q; // Access the "q" query parameter
+    console.log("Search query:", query);
+    reply.send({ message: `Search results for "${query}"` });
+  });
+  // 9.8. Fastify URL Parameters: Fastify allows you to define URL parameters using the colon (:) syntax in the route path. You can access URL parameters using the request.params object. For example:
+  fastify.get("/api/users/:id", (request, reply) => {
+    const userId = request.params.id; // Access the "id" URL parameter
+    console.log("User ID:", userId);
+    reply.send({ message: `User details for ID ${userId}` });
+  }
+  );
 }
