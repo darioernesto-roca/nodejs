@@ -936,3 +936,42 @@ console.log(title);
   }
   );
 }
+
+/* 10. Building & Consuming APIs - Nest JS */
+
+{
+  // 10.1. NestJS: NestJS is a progressive Node.js framework for building efficient and scalable server-side applications. It is built on top of Express.js and provides a modular architecture, dependency injection, and powerful decorators for defining routes, controllers, and services. You can install NestJS using npm:
+  // npm install @nestjs/core @nestjs/common @nestjs/platform-express
+  const { NestFactory } = require("@nestjs/core");
+  const { AppModule } = require("./app.module"); // Import your main application module
+
+  async function bootstrap() {
+    const app = await NestFactory.create(AppModule);
+    await app.listen(3000); // Start the server on port 3000
+    console.log("NestJS server is running on http://localhost:3000");
+  }
+  bootstrap();
+
+  // 10.2. NestJS Controllers: Controllers in NestJS are responsible for handling incoming requests and returning responses. You can define controllers using the @Controller() decorator. For example:
+  const { Controller, Get } = require("@nestjs/common");
+
+  @Controller("api")
+  class ApiController {
+    @Get("hello")
+    getHello() {
+      return { message: "Hello, World!" };
+    }
+  }
+
+  // 10.3. NestJS Services: Services in NestJS are used to encapsulate business logic and data access. You can define services using the @Injectable() decorator. For example:
+  const { Injectable } = require("@nestjs/common");
+
+  @Injectable()
+  class UserService {
+    getUserById(id) {
+      // Logic to retrieve user by ID
+      return { id, name: "John Doe" };
+    }
+  }
+
+}
