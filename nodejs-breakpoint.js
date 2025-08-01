@@ -975,14 +975,27 @@ console.log(title);
   }
 
   // 10.4. NestJS Dependency Injection: NestJS uses dependency injection to manage the lifecycle of services and controllers. You can inject services into controllers using the @Inject() decorator or by defining them in the constructor. For example:
-  const { Inject } = require("@nestjs/common");
-  @Controller("users")
-  class UserController {
-    constructor(@Inject(UserService) private userService) {}
-    @Get(":id")
-    getUser(id) {
-      return this.userService.getUserById(id); // Use the injected UserService to get user details
-    }
-  }
+  // const { Inject } = require("@nestjs/common");
+  // @Controller("users")
+  // class UserController {
+  //   constructor(@Inject(UserService) private userService) {}
+  //   @Get(":id")
+  //   getUser(id) {
+  //     return this.userService.getUserById(id); // Use the injected UserService to get user details
+  //   }
+  // }
 
+}
+
+/* 11.  Building & Consuming APIs - Hono */
+
+{
+  // 11.1. Hono: Hono is a lightweight and fast web framework for building APIs in Node.js. It is designed to be simple and easy to use, while providing powerful features for building APIs. You can install Hono using npm:
+  // npm install hono
+  const { Hono } = require("hono");
+  const app = new Hono();
+  // Example: Creating a simple API endpoint
+  app.get("/api/hello", (c) => {
+    return c.json({ message: "Hello, World!" });
+  });
 }
