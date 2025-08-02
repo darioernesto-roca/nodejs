@@ -998,4 +998,12 @@ console.log(title);
   app.get("/api/hello", (c) => {
     return c.json({ message: "Hello, World!" });
   });
+
+  // 11.2 Hono Middleware: Hono supports middleware functions that can be used to modify the request or response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware is often used for tasks such as logging, authentication, and error handling. For example:
+  app.use((c, next) => {
+    console.log(`Request received: ${c.req.method} ${c.req.path}`);
+    return next(); // Call the next middleware or route handler
+  }
+  );
+
 }
