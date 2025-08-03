@@ -999,11 +999,25 @@ console.log(title);
     return c.json({ message: "Hello, World!" });
   });
 
-  // 11.2 Hono Middleware: Hono supports middleware functions that can be used to modify the request or response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware is often used for tasks such as logging, authentication, and error handling. For example:
+  // 11.2. Hono Middleware: Hono supports middleware functions that can be used to modify the request or response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware is often used for tasks such as logging, authentication, and error handling. For example:
   app.use((c, next) => {
     console.log(`Request received: ${c.req.method} ${c.req.path}`);
     return next(); // Call the next middleware or route handler
   }
   );
 
+  // 11.3. Hono Route Parameters: Hono allows you to define route parameters using the colon (:) syntax in the route path. You can access route parameters using the context object. For example:
+  app.get("/api/users/:id", (c) => {
+    const userId = c.req.param("id"); // Access the "id" route parameter
+    console.log("User ID:", userId);
+    return c.json({ message: `User details for ID ${userId}` });
+  });
+
+  // 11.4. Hono error Handling: Hono provides a built-in error handling mechanism that allows you to handle errors in a centralized manner. You can define an error handler using the app.onError() method. For example:
+  app.onError((err, c) => {
+    console.error("Error occurred:", err.message);
+    return c.json({ error: "Internal Server Error" }, 500); // Return a JSON response with a 500 status code
+  });
 }
+
+/* */
