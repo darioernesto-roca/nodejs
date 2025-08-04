@@ -1020,4 +1020,51 @@ console.log(title);
   });
 }
 
-/* */
+/* 12. Building & Consuming APIs - Making API Calls */
+
+{
+  // 12.1. Making API Calls - Axios: Axios is a popular HTTP client for making API calls in Node.js. It provides a simple and intuitive API for sending HTTP requests and handling responses. You can install Axios using npm:
+  // npm install axios
+  const axios = require("axios");
+  // Example: Making a GET request to an API
+  axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => {
+      console.log("API Response:", response.data); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    })
+    .catch((error) => {
+      console.error("Error making API call:", error.message);
+    });
+
+  // 12.2. Making API Calls - Fetch: The Fetch API is a built-in JavaScript API for making HTTP requests. In Node.js, you can use the node-fetch package to use the Fetch API. You can install node-fetch using npm:
+  // npm install node-fetch
+  const fetch = require("node-fetch");
+  // Example: Making a GET request to an API
+  fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("API Response:", data); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    })
+    .catch((error) => {
+      console.error("Error making API call:", error.message);
+    });
+
+    // 12.3 http module: The built-in http module in Node.js can also be used to make API calls. It provides a low-level interface for sending HTTP requests and handling responses. Here's an example of making a GET request using the http module:
+  const http = require("http");
+  // Example: Making a GET request to an API
+  http.get("http://jsonplaceholder.typicode.com/posts", (res) => {
+    let data = "";
+    // Listen for data chunks
+    res.on("data", (chunk) => {
+      data += chunk;
+    });
+    // Listen for the end of the response
+    res.on("end", () => {
+      console.log("API Response:", JSON.parse(data));
+    });
+  }).on("error", (error) => {
+    console.error("Error making API call:", error.message);
+  });
+
+
+}
