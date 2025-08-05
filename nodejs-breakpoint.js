@@ -1066,5 +1066,41 @@ console.log(title);
     console.error("Error making API call:", error.message);
   });
 
+  // 12.4 Ky: Ky is a modern HTTP client for Node.js and browsers that is built on top of the Fetch API. It provides a simple and powerful API for making HTTP requests, handling responses, and managing request options. You can install Ky using npm:
+  // npm install ky
+  const ky = require("ky");
+  // Example: Making a GET request to an API
+  ky("https://jsonplaceholder.typicode.com/posts")
+    .json()
+    .then((data) => {
+      console.log("API Response:", data); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    })
+    .catch((error) => {
+      console.error("Error making API call:", error.message);
+    });
+
+  // 12.5 Got: Got is another popular HTTP client for Node.js that provides a simple and powerful API for making HTTP requests. It supports promises, streams, and async/await syntax. You can install Got using npm:
+  // npm install got
+  const got = require("got");
+  // Example: Making a GET request to an API
+  got("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => {
+      console.log("API Response:", JSON.parse(response.body)); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    })
+    .catch((error) => {
+      console.error("Error making API call:", error.message);
+    }); 
+  // 12.6 Superagent: Superagent is a flexible and powerful HTTP client for Node.js that provides a simple API for making HTTP requests. It supports promises, streams, and async/await syntax. You can install Superagent using npm:
+  // npm install superagent
+  const superagent = require("superagent");
+  // Example: Making a GET request to an API
+  superagent
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => {
+      console.log("API Response:", response.body); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    })
+    .catch((error) => {
+      console.error("Error making API call:", error.message);
+    });
 
 }
