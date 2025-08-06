@@ -1103,4 +1103,15 @@ console.log(title);
       console.error("Error making API call:", error.message);
     });
 
+    // 12.7 Fetch with Async/Await: You can also use the Fetch API with async/await syntax for making API calls in Node.js. Here's an example:
+  (async () => {
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const data = await response.json();
+      console.log("API Response:", data); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
+    } catch (error) {
+      console.error("Error making API call:", error.message);
+    }
+  })();
+
 }
