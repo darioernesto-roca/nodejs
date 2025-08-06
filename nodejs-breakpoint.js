@@ -1113,5 +1113,22 @@ console.log(title);
       console.error("Error making API call:", error.message);
     }
   })();
+}
 
+/* 13. Authentication */
+
+{
+  // 13.1. Authentication: Authentication is the process of verifying the identity of a user or system. In Node.js, you can implement authentication using various methods, such as session-based authentication, token-based authentication, and OAuth.
+
+  // 13.2. Session-Based Authentication: Session-based authentication involves creating a session for a user after they log in. The server stores the session data, and the client sends a session ID with each request to verify the user's identity. You can use the express-session middleware in Express.js to implement session-based authentication. For example:
+  const session = require("express-session");
+  const express = require("express");
+  const app = express();
+  app.use(
+    session({
+      secret: "your-secret-key",
+      resave: false,
+      saveUninitialized: true
+    })
+  );
 }
