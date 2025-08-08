@@ -1131,4 +1131,19 @@ console.log(title);
       saveUninitialized: true
     })
   );
+
+  // 13.3. Token-Based Authentication: Token-based authentication involves generating a token (usually a JSON Web Token or JWT) after a user logs in. The client stores the token and sends it with each request to verify the user's identity. You can use the jsonwebtoken package to implement token-based authentication in Node.js. For example:
+  const jwt = require("jsonwebtoken");
+  const secretKey = "your-secret-key";
+  // Generate a token
+  const token = jwt.sign({ userId: 123 }, secretKey, { expiresIn: "1h" });
+  console.log("Generated Token:", token);
+  // Verify a token
+  jwt.verify(token, secretKey, (err, decoded) => {
+    if (err) {
+      console.error("Invalid Token:", err.message);
+    } else {
+      console.log("Decoded Token:", decoded);
+    }
+  });
 }
