@@ -1163,3 +1163,18 @@ console.log(title);
     })
   );
 }
+
+// 14. Monitor Changes (Dev)
+
+{
+  // 14.1. --watch: The --watch flag is a command-line option that can be used with Node.js to automatically restart the application when files change. This is useful during development to see changes without manually restarting the server. You can use it like this:
+  // node --watch app.js
+  // This will start the app.js file and watch for changes in the file. If you make any changes to the app.js file, the application will automatically restart.
+
+  // 14.2. Nodemon: Nodemon is a popular tool that automatically restarts your Node.js application when file changes are detected. It is often used during development to avoid manually restarting the server after every change. You can install Nodemon globally using npm:
+  // npm install -g nodemon
+  // Example: Running a Node.js application with Nodemon
+  // nodemon app.js
+
+  // This will start the app.js file and watch for changes in the file. If you make any changes to the app.js file, Nodemon will automatically restart the application.
+}
