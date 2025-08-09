@@ -1146,4 +1146,20 @@ console.log(title);
       console.log("Decoded Token:", decoded);
     }
   });
+
+  // 13.4 Passport.js: Passport.js is a popular authentication middleware for Node.js that provides a simple and flexible way to implement various authentication strategies, such as local authentication, OAuth, and OpenID Connect. You can install Passport.js using npm:
+  // npm install passport passport-local
+  const passport = require("passport");
+  const LocalStrategy = require("passport-local").Strategy;
+  // Example: Using Passport.js for local authentication
+  passport.use(
+    new LocalStrategy((username, password, done) => {
+      // Logic to verify username and password
+      if (username === "user" && password === "pass") {
+        return done(null, { id: 1, username: "user" });
+      } else {
+        return done(null, false, { message: "Invalid credentials" });
+      }
+    })
+  );
 }
