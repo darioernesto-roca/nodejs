@@ -796,6 +796,18 @@ console.log(title);
       console.log(`${options.greeting}, ${name}!`); // Output: Custom greeting message, name!
     });
 
+    // 7.13 Commander: The commander package allows you to define commands, options, and arguments for your CLI applications. It provides a simple and intuitive API for building command-line interfaces. You can define commands with options and arguments, and handle user input in a structured way. For example:
+  program
+    .command("add <num1> <num2>")
+    .action((num1, num2) => {
+      const sum = parseFloat(num1) + parseFloat(num2);
+      console.log(`The sum of ${num1} and ${num2} is ${sum}`);
+    });
+  // Example: Parsing command-line arguments
+  program.parse(process.argv);
+  // Example: Displaying the help message
+  program.help(); // Output: Usage: <command> [options]
+
 }
 
 /* 8. Building & Consuming APIs - Express*/
@@ -1178,3 +1190,5 @@ console.log(title);
 
   // This will start the app.js file and watch for changes in the file. If you make any changes to the app.js file, Nodemon will automatically restart the application.
 }
+
+/* 15. */
