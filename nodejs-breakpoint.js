@@ -444,25 +444,25 @@ console.log(title);
 // The key points to remember when working with files in Node.js:
 // - Core Modules: Node.js provides built-in modules like fs (File System) and path that are essential for file operations. You'll use require('fs') and require('path') to access them.
 // - Asynchronous vs. Synchronous:
-    // Asynchronous methods (e.g., fs.readFile, fs.writeFile) are non-blocking. They initiate an operation and then use a callback function or Promises/async/await to handle the result when it's ready. This is generally preferred for performance, especially in web servers.
-    // Synchronous methods (e.g., fs.readFileSync, fs.writeFileSync) block the event loop until the operation is complete. Avoid these in production code as they can cause performance issues.
+// Asynchronous methods (e.g., fs.readFile, fs.writeFile) are non-blocking. They initiate an operation and then use a callback function or Promises/async/await to handle the result when it's ready. This is generally preferred for performance, especially in web servers.
+// Synchronous methods (e.g., fs.readFileSync, fs.writeFileSync) block the event loop until the operation is complete. Avoid these in production code as they can cause performance issues.
 // - Reading Files:
-    // Use fs.readFile (asynchronous) or fs.readFileSync (synchronous) to read the entire contents of a file.
-    // Specify the encoding (e.g., 'utf8') to get a string representation of the file content. Without encoding, you'll get a Buffer object.
+// Use fs.readFile (asynchronous) or fs.readFileSync (synchronous) to read the entire contents of a file.
+// Specify the encoding (e.g., 'utf8') to get a string representation of the file content. Without encoding, you'll get a Buffer object.
 // - Writing Files:
-    // Use fs.writeFile (asynchronous) or fs.writeFileSync (synchronous) to write data to a file, replacing the file if it exists.
-    // Use fs.appendFile (asynchronous) or fs.appendFileSync (synchronous) to add data to the end of a file.
+// Use fs.writeFile (asynchronous) or fs.writeFileSync (synchronous) to write data to a file, replacing the file if it exists.
+// Use fs.appendFile (asynchronous) or fs.appendFileSync (synchronous) to add data to the end of a file.
 // - File Paths:
-    // Use absolute paths for clarity, or relative paths from the current working directory.
-    // The path module is crucial for manipulating file paths in a platform-independent way. Use methods like path.join() to construct paths safely.
+// Use absolute paths for clarity, or relative paths from the current working directory.
+// The path module is crucial for manipulating file paths in a platform-independent way. Use methods like path.join() to construct paths safely.
 // - File System Operations: The fs module offers a wide range of functions for tasks like:
-    // fs.mkdir / fs.mkdirSync: Create directories.
-    // fs.rmdir / fs.rmdirSync: Remove directories.
-    // fs.unlink / fs.unlinkSync: Delete files.
-    // fs.rename / fs.renameSync: Rename files or directories.
-    // fs.existsSync: Check if a file or directory exists.
-    // fs.readdir / fs.readdirSync: Read the contents of a directory.
-    // fs.stat / fs.statSync: Get file or directory metadata (size, modification date, etc.).
+// fs.mkdir / fs.mkdirSync: Create directories.
+// fs.rmdir / fs.rmdirSync: Remove directories.
+// fs.unlink / fs.unlinkSync: Delete files.
+// fs.rename / fs.renameSync: Rename files or directories.
+// fs.existsSync: Check if a file or directory exists.
+// fs.readdir / fs.readdirSync: Read the contents of a directory.
+// fs.stat / fs.statSync: Get file or directory metadata (size, modification date, etc.).
 // - Error Handling: Always handle errors when working with files. Wrap your code in try...catch blocks (for synchronous operations) or check the err argument in callback functions (for asynchronous operations).
 // - Streams: For large files, streams (fs.createReadStream, fs.createWriteStream) are more efficient than reading/writing the entire file at once. They allow you to process data in chunks.
 // - Promises and Async/Await: To avoid callback hell with asynchronous operations, consider using Promises with fs.promises or the async/await syntax.
@@ -635,7 +635,10 @@ console.log(title);
   const absolutePath = path.resolve("file.txt");
   console.log("Absolute path:", absolutePath); // Output: Absolute path: /path/to/current/dir/file.txt
   // Example: Getting the relative path between two paths
-  const relativePath = path.relative("/path/to/current/dir", "/path/to/other/dir/file.txt");
+  const relativePath = path.relative(
+    "/path/to/current/dir",
+    "/path/to/other/dir/file.txt"
+  );
   console.log("Relative path:", relativePath); // Output: Relative path: ../other/dir/file.txt
   // Example: Parsing a path
   const parsedPath = path.parse("/path/to/file.txt");
@@ -647,7 +650,6 @@ console.log(title);
   // ext: '.txt',
   // name: 'file'
   // };
-
 }
 
 /* 7. Command Line Applications */
@@ -665,7 +667,7 @@ console.log(title);
   // '/path/to/node', '/path/to/script.js', 'arg1', 'arg2' ]
 
   // 7.2. Environment Variables: Environment variables are key-value pairs that can be used to configure the behavior of your application. You can access environment variables using the process.env object. For example:
-  console.log("Environment Variable PATH:", process.env.PATH); // Output: Environment Variable PATH: /usr/local/bin:/usr/bin:/bin 
+  console.log("Environment Variable PATH:", process.env.PATH); // Output: Environment Variable PATH: /usr/local/bin:/usr/bin:/bin
   console.log("Custom Environment Variable MY_VAR:", process.env.MY_VAR); // Output: Custom Environment Variable MY_VAR: value
   // You can set environment variables before running your Node.js application, like this:
   // MY_VAR=value node script.js
@@ -720,7 +722,7 @@ console.log(title);
       console.error("Error prompting user:", error.message);
     });
 
-    // 7.6 Takin Input - Prompts Package: The prompts package is another library for creating interactive command-line interfaces. It provides a simple and flexible way to prompt users for input, display menus, and handle user responses. You can install the prompts package using npm:
+  // 7.6 Takin Input - Prompts Package: The prompts package is another library for creating interactive command-line interfaces. It provides a simple and flexible way to prompt users for input, display menus, and handle user responses. You can install the prompts package using npm:
   // npm install prompts
   const prompts = require("prompts");
   // Example: Prompting the user for input
@@ -796,18 +798,15 @@ console.log(title);
       console.log(`${options.greeting}, ${name}!`); // Output: Custom greeting message, name!
     });
 
-    // 7.13 Commander: The commander package allows you to define commands, options, and arguments for your CLI applications. It provides a simple and intuitive API for building command-line interfaces. You can define commands with options and arguments, and handle user input in a structured way. For example:
-  program
-    .command("add <num1> <num2>")
-    .action((num1, num2) => {
-      const sum = parseFloat(num1) + parseFloat(num2);
-      console.log(`The sum of ${num1} and ${num2} is ${sum}`);
-    });
+  // 7.13 Commander: The commander package allows you to define commands, options, and arguments for your CLI applications. It provides a simple and intuitive API for building command-line interfaces. You can define commands with options and arguments, and handle user input in a structured way. For example:
+  program.command("add <num1> <num2>").action((num1, num2) => {
+    const sum = parseFloat(num1) + parseFloat(num2);
+    console.log(`The sum of ${num1} and ${num2} is ${sum}`);
+  });
   // Example: Parsing command-line arguments
   program.parse(process.argv);
   // Example: Displaying the help message
   program.help(); // Output: Usage: <command> [options]
-
 }
 
 /* 8. Building & Consuming APIs - Express*/
@@ -886,7 +885,6 @@ console.log(title);
     console.log("User ID:", userId);
     res.json({ message: `User details for ID ${userId}` });
   });
-
 }
 
 /* 9. Building & Consuming APIs - Fastify */
@@ -945,8 +943,7 @@ console.log(title);
     const userId = request.params.id; // Access the "id" URL parameter
     console.log("User ID:", userId);
     reply.send({ message: `User details for ID ${userId}` });
-  }
-  );
+  });
 }
 
 /* 10. Building & Consuming APIs - Nest JS */
@@ -996,7 +993,6 @@ console.log(title);
   //     return this.userService.getUserById(id); // Use the injected UserService to get user details
   //   }
   // }
-
 }
 
 /* 11.  Building & Consuming APIs - Hono */
@@ -1015,8 +1011,7 @@ console.log(title);
   app.use((c, next) => {
     console.log(`Request received: ${c.req.method} ${c.req.path}`);
     return next(); // Call the next middleware or route handler
-  }
-  );
+  });
 
   // 11.3. Hono Route Parameters: Hono allows you to define route parameters using the colon (:) syntax in the route path. You can access route parameters using the context object. For example:
   app.get("/api/users/:id", (c) => {
@@ -1061,22 +1056,24 @@ console.log(title);
       console.error("Error making API call:", error.message);
     });
 
-    // 12.3 http module: The built-in http module in Node.js can also be used to make API calls. It provides a low-level interface for sending HTTP requests and handling responses. Here's an example of making a GET request using the http module:
+  // 12.3 http module: The built-in http module in Node.js can also be used to make API calls. It provides a low-level interface for sending HTTP requests and handling responses. Here's an example of making a GET request using the http module:
   const http = require("http");
   // Example: Making a GET request to an API
-  http.get("http://jsonplaceholder.typicode.com/posts", (res) => {
-    let data = "";
-    // Listen for data chunks
-    res.on("data", (chunk) => {
-      data += chunk;
+  http
+    .get("http://jsonplaceholder.typicode.com/posts", (res) => {
+      let data = "";
+      // Listen for data chunks
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
+      // Listen for the end of the response
+      res.on("end", () => {
+        console.log("API Response:", JSON.parse(data));
+      });
+    })
+    .on("error", (error) => {
+      console.error("Error making API call:", error.message);
     });
-    // Listen for the end of the response
-    res.on("end", () => {
-      console.log("API Response:", JSON.parse(data));
-    });
-  }).on("error", (error) => {
-    console.error("Error making API call:", error.message);
-  });
 
   // 12.4 Ky: Ky is a modern HTTP client for Node.js and browsers that is built on top of the Fetch API. It provides a simple and powerful API for making HTTP requests, handling responses, and managing request options. You can install Ky using npm:
   // npm install ky
@@ -1101,7 +1098,7 @@ console.log(title);
     })
     .catch((error) => {
       console.error("Error making API call:", error.message);
-    }); 
+    });
   // 12.6 Superagent: Superagent is a flexible and powerful HTTP client for Node.js that provides a simple API for making HTTP requests. It supports promises, streams, and async/await syntax. You can install Superagent using npm:
   // npm install superagent
   const superagent = require("superagent");
@@ -1115,10 +1112,12 @@ console.log(title);
       console.error("Error making API call:", error.message);
     });
 
-    // 12.7 Fetch with Async/Await: You can also use the Fetch API with async/await syntax for making API calls in Node.js. Here's an example:
+  // 12.7 Fetch with Async/Await: You can also use the Fetch API with async/await syntax for making API calls in Node.js. Here's an example:
   (async () => {
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
       const data = await response.json();
       console.log("API Response:", data); // Output: API Response: [ { id: 1, title: '...', ... }, ... ]
     } catch (error) {
@@ -1140,7 +1139,7 @@ console.log(title);
     session({
       secret: "your-secret-key",
       resave: false,
-      saveUninitialized: true
+      saveUninitialized: true,
     })
   );
 
@@ -1182,13 +1181,138 @@ console.log(title);
   // 14.1. --watch: The --watch flag is a command-line option that can be used with Node.js to automatically restart the application when files change. This is useful during development to see changes without manually restarting the server. You can use it like this:
   // node --watch app.js
   // This will start the app.js file and watch for changes in the file. If you make any changes to the app.js file, the application will automatically restart.
-
   // 14.2. Nodemon: Nodemon is a popular tool that automatically restarts your Node.js application when file changes are detected. It is often used during development to avoid manually restarting the server after every change. You can install Nodemon globally using npm:
   // npm install -g nodemon
   // Example: Running a Node.js application with Nodemon
   // nodemon app.js
-
   // This will start the app.js file and watch for changes in the file. If you make any changes to the app.js file, Nodemon will automatically restart the application.
 }
 
-/* 15. */
+/* 15. Template engines */
+{
+  // 15.1 Template engines: Template engines are used to generate HTML dynamically by combining templates with data. In Node.js, you can use various template engines, such as EJS, Pug, and Handlebars. These engines allow you to create reusable templates and render them with data from your application.
+
+  // 15.2 EJS: EJS is a template language or engine that allows you to generate HTML markup with pure JavaScript. And this is what makes it perfect for Nodejs applications. In simple words, the EJS template engine helps to easily embed JavaScript into your HTML template.
+  // You can install EJS using npm:
+  // npm install ejs
+
+  // 15.2.1  set the view engine to ejs
+  // app.set('view engine', 'ejs');
+
+  // 15.2.2 Partials
+  // <!DOCTYPE html>
+  // <html lang="en">
+  // <head>
+  //   <%- include('../partials/head'); %>
+  // </head>
+  // <body class="container">
+
+  // <header>
+  //   <%- include('../partials/header'); %>
+  // </header>
+
+  // <main>
+  //   <div class="jumbotron">
+  //     <h1>This is great</h1>
+  //     <p>Welcome to templating using EJS</p>
+  //   </div>
+  // </main>
+
+  // <footer>
+  //   <%- include('../partials/footer'); %>
+  // </footer>
+
+  // </body>
+  // </html>
+
+  // 15.2.3 Passing data to views and partials
+  var express = require("express");
+  var app = express();
+
+  // set the view engine to ejs
+  app.set("view engine", "ejs");
+
+  // 15.2.4 use res.render to load up an ejs view file
+
+  // index page
+  app.get("/", function (req, res) {
+    var mascots = [
+      { name: "Sammy", organization: "DigitalOcean", birth_year: 2012 },
+      { name: "Tux", organization: "Linux", birth_year: 1996 },
+      { name: "Moby Dock", organization: "Docker", birth_year: 2013 },
+    ];
+    var tagline =
+      "No programming concept is complete without a cute animal mascot.";
+
+    res.render("pages/index", {
+      mascots: mascots,
+      tagline: tagline,
+    });
+  });
+
+  // about page
+  app.get("/about", function (req, res) {
+    res.render("pages/about");
+  });
+
+  app.listen(8080);
+  console.log("Server is listening on port 8080");
+
+  // 15.2.5 Rendering a Single Variable in EJS
+  // views/pages/index.ejs
+
+  // <!DOCTYPE html>
+  // <html lang="en">
+  // <head>
+  //   <%- include('../partials/head'); %>
+  // </head>
+  // <body class="container">
+
+  // <header>
+  //   <%- include('../partials/header'); %>
+  // </header>
+
+  // <main>
+  //   <div class="jumbotron">
+  //     <h1>This is great</h1>
+  //     <p>Welcome to templating using EJS</p>
+
+  //     <h2>Variable</h2>
+  //     <p><%= tagline %></p>
+  //   </div>
+  // </main>
+
+  // <footer>
+  //   <%- include('../partials/footer'); %>
+  // </footer>
+
+  // </body>
+  // </html>
+
+  // 15.2.6 Rendering a List in EJS
+  // views/pages/index.ejs
+
+  //     <h2>List of Mascots</h2>
+  //     <ul>
+  //       <% mascots.forEach(function(mascot) { %>
+  //         <li><%= mascot.name %> - <%= mascot.organization %> (<%= mascot.birth_year %>)</li>
+  //       <% }); %>
+  //     </ul>
+
+  // 15.2.7 Passing Data to a Partial in EJS
+  // The EJS partial has access to all the same data as the parent view. But be careful. If you are referencing a variable in a partial, it needs to be defined in every view that uses the partial or it will throw an error. You can also define and pass variables to an EJS partial in the include syntax like this:
+
+  // views/pages/about.ejs
+  // ...
+  // <header>
+  //   <%- include('../partials/header', {variant: 'compact'}); %>
+  // </header>
+  // ...
+
+  // But you need to again be careful about assuming a variable has been defined. If you want to reference a variable in a partial that may not always be defined, and give it a default value, you can do so like this:
+
+  // views/partials/header.ejs
+  // ...
+  // <em>Variant: <%= typeof variant != 'undefined' ? variant : 'default' %></em>
+  // ...
+}
