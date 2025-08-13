@@ -1315,4 +1315,86 @@ console.log(title);
   // ...
   // <em>Variant: <%= typeof variant != 'undefined' ? variant : 'default' %></em>
   // ...
+
+  // 15.3 Pug: Pug is a high-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers. Pug was formerly called Jade. It allows you to write HTML in a more concise and readable way. Pug compiles to HTML and can be used with Node.js applications. To use Pug, you need to install it via npm:
+  // npm install pug
+
+  // 15.3.1 Set the view engine to Pug
+  // app.set('view engine', 'pug');
+
+  // 15.3.2 Creating a Pug template
+  // views/pages/index.pug
+  // doctype html
+  // html(lang="en")
+  //   head
+  //     title My Pug App
+  //   body
+  //     h1 Welcome to My Pug App
+  //     p This is a simple Pug template.
+
+  // 15.3.3 Passing data to Pug templates
+  // var express = require("express");
+  // var app = express();
+
+  // // set the view engine to pug
+  // app.set("view engine", "pug");
+
+  // // index page
+  // app.get("/", function (req, res) {
+  //   var mascots = [
+  //     { name: "Sammy", organization: "DigitalOcean", birth_year: 2012 },
+  //     { name: "Tux", organization: "Linux", birth_year: 1996 },
+  //     { name: "Moby Dock", organization: "Docker", birth_year: 2013 },
+  //   ];
+  //   var tagline =
+  //     "No programming concept is complete without a cute animal mascot.";
+
+  //   res.render("pages/index", {
+  //     mascots: mascots,
+  //     tagline: tagline,
+  //   });
+  // });
+
+  // // about page
+  // app.get("/about", function (req, res) {
+  //   res.render("pages/about");
+  // });
+
+  // app.listen(8080);
+  // console.log("Server is listening on port 8080");
+
+  // 15.3.4 Rendering a Single Variable in Pug
+  // views/pages/index.pug
+  // doctype html
+  // html(lang="en")
+  //   head
+  //     title My Pug App
+  //   body
+  //     h1 Welcome to My Pug App
+  //     p This is a simple Pug template.
+
+  //     h2 Variable
+  //     p= tagline
+
+  // 15.3.5 Rendering a List in Pug
+  // views/pages/index.pug
+  //     h2 List of Mascots
+  //     ul
+  //       each mascot in mascots
+  //         li= "#{mascot.name} - #{mascot.organization} (#{mascot.birth_year})"
+
+  // 15.3.6 Passing Data to a Partial in Pug
+  // The Pug partial has access to all the same data as the parent view. But be careful. If you are referencing a variable in a partial, it needs to be defined in every view that uses the partial or it will throw an error. You can also define and pass variables to a Pug partial in the include syntax like this:
+
+  // views/pages/about.pug
+  // ...
+  // header
+  //   include ../partials/header.pug variant='compact'
+  // ...
+
+  // But you need to again be careful about assuming a variable has been defined. If you want to reference a variable in a partial that may not always be defined, and give it a default value, you can do so like this:
+
+  // views/partials/header.pug
+  // ...
+  // em Variant: #{typeof variant != 'undefined' ? variant : 'default'}
 }
