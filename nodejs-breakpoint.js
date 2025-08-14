@@ -1397,4 +1397,96 @@ console.log(title);
   // views/partials/header.pug
   // ...
   // em Variant: #{typeof variant != 'undefined' ? variant : 'default'}
+
+  // 15.4 Handlebars: Handlebars is a popular templating engine that allows you to create dynamic HTML templates with a simple and intuitive syntax. It is built on top of the Mustache templating language and provides additional features such as helpers and partials. You can install Handlebars using npm:
+  // npm install handlebars
+
+  // 15.4.1 Setting up Handlebars with Express
+  // You can use the express-handlebars package to integrate Handlebars with Express.js:
+  // npm install express-handlebars
+
+  // 15.4.2 Creating a Handlebars Template
+  // views/pages/index.hbs
+  // <!DOCTYPE html>
+  // <html lang="en">
+  //   <head>
+  //     <meta charset="UTF-8" />
+  //     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  //     <title>My Handlebars App</title>
+  //   </head>
+  //   <body>
+  //     <h1>Welcome to My Handlebars App</h1>
+  //     <p>This is a simple Handlebars template.</p>
+  //   </body>
+  // </html>
+
+  // 15.4.3 Passing Data to Handlebars Templates
+  // var express = require("express");
+  // var exphbs = require("express-handlebars");
+  // var app = express();
+
+  // // set the view engine to handlebars
+  // app.engine("hbs", exphbs({ extname: ".hbs" }));
+  // app.set("view engine", "hbs");
+
+  // // index page
+  // app.get("/", function (req, res) {
+  //   var mascots = [
+  //     { name: "Sammy", organization: "DigitalOcean", birth_year: 2012 },
+  //     { name: "Tux", organization: "Linux", birth_year: 1996 },
+  //     { name: "Moby Dock", organization: "Docker", birth_year: 2013 },
+  //   ];
+  //   var tagline =
+  //     "No programming concept is complete without a cute animal mascot.";
+
+  //   res.render("pages/index", {
+  //     mascots: mascots,
+  //     tagline: tagline,
+  //   });
+  // });
+
+  // // about page
+  // app.get("/about", function (req, res) {
+  //   res.render("pages/about");
+  // });
+
+  // app.listen(8080);
+  // console.log("Server is listening on port 8080");
+
+  // 15.4.4 Rendering a Single Variable in Handlebars
+  // views/pages/index.hbs
+  // <!DOCTYPE html>
+  // <html lang="en">
+  //   <head>
+  //     <meta charset="UTF-8" />
+  //     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  //     <title>My Handlebars App</title>
+  //   </head>
+  //   <body>
+  //     <h1>Welcome to My Handlebars App</h1>
+  //     <p>This is a simple Handlebars template.</p>
+  //   </body>
+  // </html>
+
+  // 15.4.5 Rendering a List in Handlebars
+  // views/pages/index.hbs
+  // <!DOCTYPE html>
+  // <html lang="en">
+  //   <head>
+  //     <meta charset="UTF-8" />
+  //     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  //     <title>My Handlebars App</title>
+  //   </head>
+  //   <body>
+  //     <h1>Welcome to My Handlebars App</h1>
+  //     <p>This is a simple Handlebars template.</p>
+  //     <h2>List of Mascots</h2>
+  //     <ul>
+  //       {{#each mascots}}
+  //         <li>{{name}} - {{organization}} ({{birth_year}})</li>
+  //       {{/each}}
+  //     </ul>
+  //   </body>
+  // </html>
+
 }
