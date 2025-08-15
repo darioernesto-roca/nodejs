@@ -1489,4 +1489,9 @@ console.log(title);
   //   </body>
   // </html>
 
+  // 15. 5 Marko: Marko is a modern UI framework that allows you to build fast and efficient web applications. It uses a unique approach to rendering and offers features like server-side rendering, client-side hydration, and a powerful templating language. You can install Marko using npm:
+  // npm install marko
+  // If you're starting from scratch, you can use Marko's CLI commands to quickly create a starter app:
+  // npm init marko
+  // This will use an interactive CLI to automatically create a project for you using the pre-made starter template of your choosing. The basic template is the most minimal and the easiest way to get started. It uses our recommended app framework Marko Run that handles building, bundling, and serving your web application. These projects are config-free with built-in file based routing and automatic code reloading.
 }
