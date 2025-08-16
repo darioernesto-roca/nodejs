@@ -1495,3 +1495,16 @@ console.log(title);
   // npm init marko
   // This will use an interactive CLI to automatically create a project for you using the pre-made starter template of your choosing. The basic template is the most minimal and the easiest way to get started. It uses our recommended app framework Marko Run that handles building, bundling, and serving your web application. These projects are config-free with built-in file based routing and automatic code reloading.
 }
+
+
+/* 16. Working with databases */
+
+{
+  // 16.6.1 Mongoose: Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js. It provides a schema-based solution to model your application data and includes built-in type casting, validation, and query building.
+
+  // You can install Mongoose using npm:
+  // npm install mongoose
+
+  // Once Mongoose is installed, you can use it to define your data models and interact with your MongoDB database. You can create a folder called db and add your Mongoose models there. A model is a JavaScript object that represents a collection in your MongoDB database and defines the structure of the documents within that collection.
+
+}
