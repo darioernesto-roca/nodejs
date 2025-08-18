@@ -1497,7 +1497,7 @@ console.log(title);
 }
 
 
-/* 16. Working with databases */
+/* 16. Working with databases - NoSQL */
 
 {
   // 16.6.1 Mongoose: Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js. It provides a schema-based solution to model your application data and includes built-in type casting, validation, and query building.
@@ -1513,4 +1513,10 @@ console.log(title);
   // This will create a new Prisma project with a schema.prisma file where you can define your data models and relationships.
 
   // 16.6.3 Native Drivers: Native drivers are the lowest-level way to interact with a database. They provide a direct interface to the database and are typically used for performance-critical applications. For example, the MongoDB Node.js driver allows you to interact with a MongoDB database using JavaScript.
+}
+
+/* 17. Working with databases - Relational */
+
+{
+  // 17.1 Drizzle: Drizzle lets you build your project the way you want, without interfering with your project or structure. Using Drizzle you can define and manage database schemas in TypeScript, access your data in a SQL-like or relational way, and take advantage of opt-in tools to make your developer experience amazing.
 }
