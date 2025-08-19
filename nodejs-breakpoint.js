@@ -1519,4 +1519,14 @@ console.log(title);
 
 {
   // 17.1 Drizzle: Drizzle lets you build your project the way you want, without interfering with your project or structure. Using Drizzle you can define and manage database schemas in TypeScript, access your data in a SQL-like or relational way, and take advantage of opt-in tools to make your developer experience amazing.
+  // You can install Drizzle using npm:
+  // npm install drizzle-orm
+  // Once Drizzle is installed, you can use it to define your database schema and interact with your database in a type-safe manner.
+  // Drizzle supports various databases, including PostgreSQL, MySQL, SQLite, and more. It provides a simple and intuitive API for querying and manipulating data.
+
+  // 17.2 TypeORM: TypeORM is an ORM that can run in Node.js and can be used with TypeScript and JavaScript. It supports many SQL-based databases and provides a powerful set of features for working with relational data.
+  // You can install TypeORM using npm:
+  // npm install typeorm reflect-metadata
+  // TypeORM requires the reflect-metadata package to be imported at the entry point of your application.
+
 }
