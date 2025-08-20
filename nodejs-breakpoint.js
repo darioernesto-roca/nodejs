@@ -1529,4 +1529,10 @@ console.log(title);
   // npm install typeorm reflect-metadata
   // TypeORM requires the reflect-metadata package to be imported at the entry point of your application.
 
+  // 17.3 Knex: Knex.js is a "batteries included" SQL query builder for PostgreSQL, CockroachDB, MSSQL, MySQL, MariaDB, SQLite3, Better-SQLite3, Oracle, and Amazon Redshift designed to be flexible, portable, and fun to use. To use Knex with node.js we have to install it using npm:
+  // npm install knex
+  // We also need to install the database driver for the database we're using. For example, if we're using PostgreSQL, we need to install the pg package:
+  // npm install pg
+  // Once Knex is installed, we can create a Knex instance and configure it to connect to our database.
+
 }
