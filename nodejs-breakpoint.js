@@ -1535,4 +1535,10 @@ console.log(title);
   // npm install pg
   // Once Knex is installed, we can create a Knex instance and configure it to connect to our database.
 
+  // 17.4 Sequelize: Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more. You can install Sequelize using npm:
+  // npm install sequelize
+  // You also need to install the database driver for the database you're using. For example, if we're using PostgreSQL, we need to install the pg package:
+  // npm install pg
+  // Once Sequelize is installed, you can use it to define your data models and interact with your database.
+
 }
