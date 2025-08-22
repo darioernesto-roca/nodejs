@@ -1541,4 +1541,9 @@ console.log(title);
   // npm install pg
   // Once Sequelize is installed, you can use it to define your data models and interact with your database.
 
+  // 17.5 Prisma: Prisma is a modern database toolkit that simplifies database access and management. It provides a type-safe query builder, migrations, and a powerful ORM (Object-Relational Mapping) layer. Prisma provides an open source next-generation ORM in the TypeScript ecosystem. It offers a dedicated API for relation filters. It provides an abstraction layer that makes you more productive compared to writing SQL. Prisma currently supports PostgreSQL, MySQL, SQL Server, SQLite, MongoDB and CockroachDB. You can install Prisma using npm:
+  // npm install prisma --save-dev
+  // npx prisma init
+  // This will create a new Prisma project with a schema.prisma file where you can define your data models and relationships.
+
 }
