@@ -1546,4 +1546,6 @@ console.log(title);
   // npx prisma init
   // This will create a new Prisma project with a schema.prisma file where you can define your data models and relationships.
 
+  // 17.6 Native Drivers: Native drivers are the lowest-level way to interact with a database. They provide a direct interface to the database and are typically used for performance-critical applications. For example, the MongoDB Node.js driver allows you to interact with a MongoDB database using JavaScript. Native drivers are often used in scenarios where you need fine-grained control over database operations or when working with databases that don't have a mature ORM ecosystem. However, using native drivers typically requires more boilerplate code and a deeper understanding of the database's query language. For example, the MongoDB Node.js driver provides a rich set of features for working with MongoDB, including support for transactions, aggregation, and change streams.
+
 }
