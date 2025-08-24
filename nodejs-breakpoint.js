@@ -1547,5 +1547,14 @@ console.log(title);
   // This will create a new Prisma project with a schema.prisma file where you can define your data models and relationships.
 
   // 17.6 Native Drivers: Native drivers are the lowest-level way to interact with a database. They provide a direct interface to the database and are typically used for performance-critical applications. For example, the MongoDB Node.js driver allows you to interact with a MongoDB database using JavaScript. Native drivers are often used in scenarios where you need fine-grained control over database operations or when working with databases that don't have a mature ORM ecosystem. However, using native drivers typically requires more boilerplate code and a deeper understanding of the database's query language. For example, the MongoDB Node.js driver provides a rich set of features for working with MongoDB, including support for transactions, aggregation, and change streams.
+}
 
+/* 18. Testing */
+
+{
+  // 18.1 Test: A test is a piece of code that verifies that another piece of code behaves as expected. In the context of Node.js applications, tests are typically written using a testing framework such as Mocha, Chai, or Jest.
+
+  // 18.2 Vitest: Vitest is a fast unit test framework powered by Vite. It provides a great developer experience with features like hot module replacement (HMR), a rich API, and excellent TypeScript support. You can install Vitest using npm:
+  // npm install vitest --save-dev
+  // Once installed, you can create test files alongside your source files and run them using the Vitest CLI.
 }
