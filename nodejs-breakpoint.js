@@ -1557,4 +1557,6 @@ console.log(title);
   // 18.2 Vitest: Vitest is a fast unit test framework powered by Vite. It provides a great developer experience with features like hot module replacement (HMR), a rich API, and excellent TypeScript support. You can install Vitest using npm:
   // npm install vitest --save-dev
   // Once installed, you can create test files alongside your source files and run them using the Vitest CLI.
+
+  // 18.3 Jest: Jest is a popular testing framework for JavaScript applications, including Node.js. It provides a simple and intuitive API for writing tests, along with features like snapshot testing, mocking, and code coverage. You can install Jest using npm:
 }
