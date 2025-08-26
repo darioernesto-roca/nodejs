@@ -1559,4 +1559,10 @@ console.log(title);
   // Once installed, you can create test files alongside your source files and run them using the Vitest CLI.
 
   // 18.3 Jest: Jest is a popular testing framework for JavaScript applications, including Node.js. It provides a simple and intuitive API for writing tests, along with features like snapshot testing, mocking, and code coverage. You can install Jest using npm:
+  // npm install jest --save-dev
+  // Once installed, you can create test files alongside your source files and run them using the Jest CLI.
+
+  // 18.4 Mocha: Mocha is a flexible testing framework for Node.js that allows you to write tests in a variety of styles, including BDD (Behavior-Driven Development) and TDD (Test-Driven Development). You can install Mocha using npm:
+  // npm install mocha --save-dev
+  // Once installed, you can create test files alongside your source files and run them using the Mocha CLI.
 }
