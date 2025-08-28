@@ -1569,4 +1569,10 @@ console.log(title);
   // 18.5 Node:test: Node:test is a built-in testing module in Node.js that provides a simple way to write and run tests. It is designed to work seamlessly with the Node.js ecosystem and can be used to test any Node.js application. You can create test files with the .test.js extension and run them using the Node.js command line. For example:
   // node test/example.test.js
 
+  // 18.6 Cypress: Cypress is a powerful end-to-end testing framework that is designed for modern web applications. It provides a rich set of features for testing user interactions, including support for mocking APIs, simulating user actions, and inspecting application state. You can install Cypress using npm:
+  // npm install cypress --save-dev
+  // Once installed, you can create test files in the cypress/integration directory and run them using the Cypress Test Runner.
+
 }
+
+/*  */
