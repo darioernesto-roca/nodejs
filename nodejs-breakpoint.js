@@ -1573,6 +1573,10 @@ console.log(title);
   // npm install cypress --save-dev
   // Once installed, you can create test files in the cypress/integration directory and run them using the Cypress Test Runner.
 
+  // 18.7 Playwright: Playwright is a powerful end-to-end testing framework that is designed for modern web applications. It provides a rich set of features for testing user interactions across different browsers, including support for mocking APIs, simulating user actions, and inspecting application state. You can install Playwright using npm:
+  // npm install playwright --save-dev
+  // Once installed, you can create test files in the tests directory and run them using the Playwright Test Runner.
+
 }
 
 /*  */
