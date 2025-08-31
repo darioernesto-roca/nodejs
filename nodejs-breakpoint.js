@@ -1579,4 +1579,20 @@ console.log(title);
 
 }
 
-/*  */
+/* 19 Logging */
+
+{
+  // 19.1 Winston: Winston is a popular logging library for Node.js that provides a simple and flexible API for logging messages. It supports multiple transports (e.g., console, file, HTTP) and allows you to customize the log format and level. You can install Winston using npm:
+  // npm install winston --save
+  // Once installed, you can create a logger instance and use it to log messages at different levels (e.g., info, warn, error). For example:
+
+  // const winston = require('winston');
+  // const logger = winston.createLogger({
+  //   level: 'info',
+  //   format: winston.format.json(),
+  //   transports: [
+  //     new winston.transports.Console(),
+  //     new winston.transports.File({ filename: 'error.log', level: 'error' }),
+  //   ],
+  // });
+}
