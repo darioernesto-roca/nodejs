@@ -1595,4 +1595,19 @@ console.log(title);
   //     new winston.transports.File({ filename: 'error.log', level: 'error' }),
   //   ],
   // });
+
+  // 19.2 Morgan: Morgan is a middleware for logging HTTP requests in Node.js applications. It provides a simple way to log request details, such as the request method, URL, and response time. You can install Morgan using npm:
+  // npm install morgan --save
+  // Once installed, you can use Morgan as middleware in your Express application. For example:
+
+  // const morgan = require('morgan');
+  // app.use(morgan('combined'));
+
+  // Morgan is used in combination with Winston to provide a comprehensive logging solution for your application. For example:
+
+  // const express = require('express');
+  // const app = express();
+  // app.use(morgan('combined', { stream: { write: (message) => logger.info(message.trim()) } }));
+
+  // This way, all HTTP requests will be logged using Winston, providing a consistent logging format across your application.
 }
