@@ -1611,3 +1611,13 @@ console.log(title);
 
   // This way, all HTTP requests will be logged using Winston, providing a consistent logging format across your application.
 }
+
+/* 20. Keep app running */
+
+{
+  // 20.1 PM2: PM2 is a popular process manager for Node.js applications that makes it easy to keep your app running. You can install PM2 globally using npm:
+  // npm install pm2 -g
+  // Once installed, you can start your application using PM2:
+  // pm2 start app.js
+  // PM2 will keep your app running in the background and automatically restart it if it crashes.
+}
