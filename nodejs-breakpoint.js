@@ -1621,3 +1621,17 @@ console.log(title);
   // pm2 start app.js
   // PM2 will keep your app running in the background and automatically restart it if it crashes.
 }
+
+/* 21. Threads */
+// Node.js is a single-threaded language and gives us ways to work parallelly to our main process. Taking note of nowadays multicore system single threading is very memory efficient.
+
+{
+  // 21.1 Worker Threads: Node.js provides a built-in module called 'worker_threads' that allows you to create multiple threads for parallel execution. This can be useful for CPU-intensive tasks. You can use the Worker class to create a new thread and communicate with it using message passing. For example:
+
+  // const { Worker } = require('worker_threads');
+  // const worker = new Worker('./worker.js');
+  // worker.on('message', (result) => {
+  //   console.log('Result from worker:', result);
+  // });
+  // worker.postMessage('Hello, worker!');
+}
