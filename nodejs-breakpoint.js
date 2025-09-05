@@ -1634,4 +1634,22 @@ console.log(title);
   //   console.log('Result from worker:', result);
   // });
   // worker.postMessage('Hello, worker!');
+
+  // 21.2 Cluster: Node.js provides a built-in module called 'cluster' that allows you to create multiple instances of your application to take advantage of multi-core systems. This can help improve the performance and scalability of your application. For example:
+
+  // const cluster = require('cluster');
+  // const numCPUs = require('os').cpus().length;
+
+  // if (cluster.isMaster) {
+  //   for (let i = 0; i < numCPUs; i++) {
+  //     cluster.fork();
+  //   }
+  // } else {
+  //   // Start your application
+  // }
+
+  // Some cases where you might want to use threads or clusters include:
+  // - CPU-intensive tasks (e.g., image processing, data analysis)
+  // - Handling a large number of simultaneous connections
+  // - Offloading work from the main thread to improve responsiveness
 }
