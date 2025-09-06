@@ -1652,4 +1652,19 @@ console.log(title);
   // - CPU-intensive tasks (e.g., image processing, data analysis)
   // - Handling a large number of simultaneous connections
   // - Offloading work from the main thread to improve responsiveness
+
+  // 21.3 Child Processes: The 'child_process' module in Node.js allows you to spawn new processes and communicate with them. This can be useful for running external commands or scripts, or for offloading work to separate processes. For example:
+
+  // const { exec } = require('child_process');
+  // exec('ls -la', (error, stdout, stderr) => {
+  //   if (error) {
+  //     console.error(`Error: ${error.message}`);
+  //     return;
+  //   }
+  //   if (stderr) {
+  //     console.error(`Stderr: ${stderr}`);
+  //     return;
+  //   }
+  //   console.log(`Stdout: ${stdout}`);
+  // });
 }
