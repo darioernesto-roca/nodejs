@@ -1668,3 +1668,73 @@ console.log(title);
   //   console.log(`Stdout: ${stdout}`);
   // });
 }
+
+/* 22. Streams */
+
+{
+  // 22.1 Streams: Streams are a powerful feature in Node.js that allow you to read and write data in a continuous flow. They are particularly useful for handling large amounts of data, such as files or network connections, without having to load the entire dataset into memory at once.
+
+  // 22.2 Types of Streams: There are four main types of streams in Node.js:
+  // - Readable streams: Used for reading data from a source (e.g., file, network).
+  // - Writable streams: Used for writing data to a destination (e.g., file, network).
+  // - Duplex streams: Can be both readable and writable (e.g., TCP sockets).
+  // - Transform streams: A type of duplex stream that can modify or transform the data as it is read or written (e.g., zlib compression).
+
+  // Multiple streams can be chained together using pipe() method.
+
+  // 22.3 Using Streams: You can use streams in Node.js by importing the 'stream' module and creating instances of the appropriate stream type. For example, to read a file using a readable stream:
+
+  const fs = require("fs");
+  const readableStream = fs.createReadStream("input.txt");
+  readableStream.on("data", (chunk) => {
+    console.log("Received chunk:", chunk);
+  });
+
+  // To write to a file using a writable stream:
+  const writableStream = fs.createWriteStream("output.txt");
+  writableStream.write("Hello, world!\n");
+  writableStream.end();
+  writableStream.on("finish", () => {
+    console.log("Finished writing to file.");
+  });
+
+  // To transform data using a transform stream:
+  const { Transform } = require("stream");
+  const upperCaseTransform = new Transform({
+    transform(chunk, encoding, callback) {
+      this.push(chunk.toString().toUpperCase());
+      callback();
+    },
+  });
+  readableStream.pipe(upperCaseTransform).pipe(writableStream);
+
+  // Streams are particularly useful for handling large files or data sources, as they allow you to process data in smaller chunks, reducing memory usage and improving performance.
+
+  // Some common use cases for streams include:
+  // - Reading and writing large files
+  // - Handling HTTP requests and responses
+  // - Processing data from databases or APIs
+  // - Real-time data processing (e.g., WebSockets, chat applications)
+
+  // Here some popular stream libraries:
+  // - Streamifier: A simple library for converting strings, buffers, and arrays into readable streams.
+  // - Highland: A high-level stream library that provides a functional programming style for working with streams.
+  // - Through2: A small library for creating transform streams with a simple API.
+  // - RxJS: A reactive programming library that provides a powerful way to work with streams of data using observables.
+
+  // - Node.js built-in 'stream' module: Provides a set of utilities for working with streams, including readable, writable, and transform streams.
+
+  // 22.4 Streams applications examples:
+  // - File processing: Reading and writing large files in chunks to avoid loading the entire file into memory.
+  // - Data transformation: Transforming data as it is read or written, such as compressing or encrypting data.
+  // - Real-time data processing: Handling real-time data streams, such as WebSocket connections or live data feeds.
+  // - Network communication: Reading and writing data over network connections, such as TCP sockets or HTTP requests/responses.
+
+  // 22.5 Website examples:
+  // - Video streaming platforms: Services like YouTube and Netflix use streams to deliver video content to users in real-time.
+  // - Music streaming services: Platforms like Spotify and Apple Music use streams to deliver audio content to users.
+  // - File sharing services: Services like Dropbox and Google Drive use streams to upload and download files efficiently.
+  // - Real-time collaboration tools: Applications like Google Docs and Slack use streams to enable real-time collaboration and communication between users.
+
+  // Streams are a fundamental part of Node.js and are widely used in various applications to handle data efficiently and effectively. In the backend, streams are commonly used for file processing, data transformation, and network communication. In the frontend, streams are often used for handling real-time data, such as WebSocket connections and live data feeds. The stream functions are efficient and help in reducing memory consumption, making them ideal for handling large datasets and real-time applications. They are efficient because they process data in smaller chunks, allowing for better memory management and improved performance.
+}
