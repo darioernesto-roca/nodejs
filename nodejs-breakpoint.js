@@ -1738,3 +1738,30 @@ console.log(title);
 
   // Streams are a fundamental part of Node.js and are widely used in various applications to handle data efficiently and effectively. In the backend, streams are commonly used for file processing, data transformation, and network communication. In the frontend, streams are often used for handling real-time data, such as WebSocket connections and live data feeds. The stream functions are efficient and help in reducing memory consumption, making them ideal for handling large datasets and real-time applications. They are efficient because they process data in smaller chunks, allowing for better memory management and improved performance.
 }
+
+/* 23. Debugging */
+
+{
+  // 23.1 Debugging: Debugging is the process of identifying and fixing errors or bugs in your code. In Node.js, there are several tools and techniques you can use to debug your applications. Debugging is a concept to identify and remove errors from software applications. It is a crucial part of the software development process, as it helps ensure that the application functions correctly and meets the desired requirements.
+
+  // Why not to use console.log() for debugging?
+  // Using console.log to debug the code generally dives into an infinite loop of “stopping the app and adding a console.log, and start the app again” operations. Besides slowing down the development of the app, it also makes the writing dirty and creates unnecessary code. Finally, trying to log out variables alongside with the noise of other potential logging operations, may make the process of debugging difficult when attempting to find the values you are debugging.
+
+  // 23.2 Built-in Debugger: Node.js has a built-in debugger that you can use to step through your code and inspect variables. You can start the debugger by running your Node.js application with the --inspect flag:
+  // node --inspect app.js
+  // This will start your application and open a debugging session that you can connect to using a compatible debugger, such as Chrome DevTools or Visual Studio Code. You can set breakpoints, step through your code, and inspect variables to help identify and fix issues.
+
+  // 23.3 Visual Studio Code Debugger: If you're using Visual Studio Code as your code editor, you can take advantage of its built-in debugging capabilities for Node.js applications. You can create a launch configuration in your workspace settings to define how to start and debug your application. Once configured, you can set breakpoints, step through your code, and inspect variables directly within the editor.
+
+  // 23.4 Third-Party Debugging Tools: There are several third-party debugging tools available for Node.js applications, such as:
+  // - Node Inspector: A web-based debugger that allows you to debug your Node.js applications using Chrome DevTools.
+  // - ndb: An improved debugging experience for Node.js applications that provides a more user-friendly interface and additional features.
+  // - Debug: A simple debugging utility that allows you to add debug statements to your code and control the output using environment variables.
+
+  // These tools can provide additional features and capabilities that may be useful for debugging your applications.
+
+  // 23.5 Browser DevTools: If your Node.js application is running in a browser environment (e.g., using Electron or NW.js), you can use the browser's built-in developer tools to debug your application. Most modern browsers, such as Chrome and Firefox, have powerful developer tools that allow you to inspect elements, view console output, and debug JavaScript code. TO debug on the browser, you can use the following command:
+  // node --inspect-brk app.js
+  // This will start your application and pause execution at the first line of code, allowing you to connect to the debugger using the browser's developer tools. 
+
+}
