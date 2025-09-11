@@ -1764,9 +1764,15 @@ console.log(title);
   // node --inspect-brk app.js
   // This will start your application and pause execution at the first line of code, allowing you to connect to the debugger using the browser's developer tools. 
 
-  // 23.6 Memory Leaks: Memory leaks can occur in Node.js applications when objects are not properly released from memory, leading to increased memory usage over time. To identify and fix memory leaks, you can use tools such as:
+  // 23.6.1 Memory Leaks: Memory leaks can occur in Node.js applications when objects are not properly released from memory, leading to increased memory usage over time. To identify and fix memory leaks, you can use tools such as:
   // - Chrome DevTools: You can use the Memory tab in Chrome DevTools to take heap snapshots and analyze memory usage in your application.
   // - Node.js built-in heap profiler: You can use the --inspect flag with the --heap-profiler option to generate heap profiles that can be analyzed using tools like Chrome DevTools or the node-heapdump package.
   // - Third-party tools: There are several third-party tools available for detecting and fixing memory leaks in Node.js applications, such as memwatch-next and leakage.
+
+  // 23.6.2 Garbage Collection: Node.js uses a garbage collector to automatically manage memory allocation and deallocation. However, in some cases, you may need to manually trigger garbage collection to free up memory. You can do this by using the --expose-gc flag when starting your Node.js application:
+
+  // 23.7 node --inspect: The --inspect flag enables the V8 inspector integration, allowing you to debug your Node.js application using Chrome DevTools or other compatible debuggers. You can start your application with the --inspect flag like this:
+  // node --inspect app.js
+  // This will start your application and open a debugging session that you can connect to using a compatible debugger. You can set breakpoints, step through your code, and inspect variables to help identify and fix issues.
 
 }
