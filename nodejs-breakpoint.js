@@ -1782,3 +1782,33 @@ console.log(title);
   // These tools can help you identify and fix performance issues, memory leaks, and other problems in your Node.js applications.
 
 }
+
+/* 24. Nodejs core modules */
+// Node.js has several built-in core modules that provide essential functionality for building applications. Some of the most commonly used core modules include:
+{
+  // fs: 'File system module for working with files and directories',
+  // url: 'Module for parsing and manipulating URLs',
+  // console: 'Module for logging and debugging',
+  // util: 'Module for utility functions and helpers',
+  // events: 'Module for working with events and event emitters',
+  // os: 'Module for working with the operating system',
+  // worker_threads: 'Module for creating and managing worker threads',
+  // child_process: 'Module for spawning and managing child processes',
+  // process object: 'Provides information and control over the current Node.js process',
+  // crypto: 'Module for cryptographic operations',
+  // timers: 'Module for working with timers and scheduling tasks',
+  // zlib: 'Module for compression and decompression',
+  // dns: 'Module for DNS resolution and lookups',
+  // net: 'Module for creating TCP and UDP servers and clients',
+  // tls: 'Module for working with TLS/SSL connections',
+  // readline: 'Module for reading input from a readable stream (e.g., command line)',
+  // assert: 'Module for writing test assertions',
+  // vm: 'Module for running code in a virtual machine context',
+  // http: 'Module for creating HTTP servers and clients',
+  // https: 'Module for creating HTTPS servers and clients',
+  // path: 'Module for working with file and directory paths',
+  // stream: 'Module for working with streams of data',
+  // buffer: 'Module for working with binary data',
+  // querystring: 'Module for parsing and formatting URL query strings',
+  // readline: 'Module for reading input from a readable stream (e.g., command line)'
+}
