@@ -1775,4 +1775,10 @@ console.log(title);
   // node --inspect app.js
   // This will start your application and open a debugging session that you can connect to using a compatible debugger. You can set breakpoints, step through your code, and inspect variables to help identify and fix issues.
 
+  // 23.8 Using APM tools for debugging: Application Performance Monitoring (APM) tools can help you monitor and debug your Node.js applications in production environments. Some popular APM tools for Node.js include:
+  // - New Relic: A comprehensive APM solution that provides real-time monitoring, error tracking, and performance analysis for Node.js applications.
+  // - Datadog: A cloud-based monitoring platform that offers APM capabilities for Node.js applications, including distributed tracing, error tracking, and performance metrics.
+  // - AppDynamics: An APM tool that provides deep visibility into the performance of Node.js applications, including code-level diagnostics and real-time monitoring.
+  // These tools can help you identify and fix performance issues, memory leaks, and other problems in your Node.js applications.
+
 }
