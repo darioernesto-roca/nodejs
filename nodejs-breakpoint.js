@@ -1812,3 +1812,16 @@ console.log(title);
   // querystring: 'Module for parsing and formatting URL query strings',
   // readline: 'Module for reading input from a readable stream (e.g., command line)'
 }
+
+/* 25. Further reading */
+// Here are some additional resources for learning more about Node.js and related topics:
+{
+  // Official Node.js Documentation: The official documentation for Node.js is a comprehensive resource that covers all aspects of the platform, including core modules, APIs, and best practices. It is regularly updated and maintained by the Node.js community.
+  // URL: https://nodejs.org/en/docs/
+  // Node.js GitHub Repository: The official GitHub repository for Node.js contains the source code, issue tracker, and contribution guidelines. It is a valuable resource for developers looking to understand the inner workings of Node.js or contribute to its development.
+  // URL: https://github.com/nodejs/node
+  // Node.js YouTube Channel: The official Node.js YouTube channel features talks, tutorials, and presentations from Node.js contributors and community members. It is a great way to learn about new features and best practices.
+  // URL: https://www.youtube.com/c/nodejs
+  // Node.js Community: The Node.js community is active and welcoming, with many forums, chat rooms, and meetups where developers can ask questions, share knowledge, and collaborate on projects.
+  // URL: https://nodejs.org/en/get-involved/
+}
