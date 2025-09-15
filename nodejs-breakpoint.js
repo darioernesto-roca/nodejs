@@ -1824,4 +1824,8 @@ console.log(title);
   // URL: https://www.youtube.com/c/nodejs
   // Node.js Community: The Node.js community is active and welcoming, with many forums, chat rooms, and meetups where developers can ask questions, share knowledge, and collaborate on projects.
   // URL: https://nodejs.org/en/get-involved/
+
+  // Node.js Books: There are many books available that cover various aspects of Node.js development, from beginner to advanced topics. Some popular titles include "Node.js Design Patterns" by Mario Casciaro and "Learning Node.js Development" by Andrew Mead.
+  // Online Courses: There are many online courses and tutorials available that cover Node.js development, including platforms like Udemy, Coursera, and Pluralsight. These courses often include hands-on projects and exercises to help reinforce learning.
+  // Blogs and Articles: Many developers and companies maintain blogs and write articles about Node.js development, covering topics such as best practices, performance optimization, and new features. Some popular blogs include the Node.js Foundation blog and the RisingStack blog.
 }
